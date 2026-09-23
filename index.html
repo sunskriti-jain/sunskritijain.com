@@ -59,28 +59,36 @@ p{margin:0}
 @media (max-width:760px){.nav .name{display:none}.nav .wrap{justify-content:flex-start}.nav ul{gap:1.2rem}}
 
 /* hero */
-.hero{min-height:calc(100svh - 3.75rem);display:grid;align-content:center;justify-items:center;text-align:center;padding-block:4rem 5rem}
-.hero .label{letter-spacing:.24em}
-.portrait{width:clamp(7.5rem,13vw,10rem);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:1px solid rgba(212,179,115,.55);padding:4px;margin-bottom:1.75rem;box-shadow:0 0 50px rgba(0,0,0,.75)}
-.hero h1{font-size:clamp(3.4rem,11vw,8.25rem);font-weight:400;letter-spacing:-.015em;line-height:.95;margin-top:1.5rem;text-shadow:0 0 40px rgba(0,0,0,.8)}
-.hero .lede{margin-top:1.6rem;font-size:clamp(1.2rem,2.1vw,1.45rem);line-height:1.5;max-width:36rem;color:#D8D4CB;text-shadow:0 0 24px rgba(0,0,0,.9)}
+.hero{min-height:calc(100svh - 3.75rem);display:grid;align-content:center;padding-block:3.5rem 4rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-photo{display:grid;justify-items:center}
+.portrait{width:clamp(11rem,22vw,18rem);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:1px solid rgba(212,179,115,.55);padding:5px;box-shadow:0 0 70px rgba(0,0,0,.8)}
+.hero-text{max-width:38rem}
+.hero .label{letter-spacing:.22em}
+.hero h1{font-size:clamp(3rem,7.5vw,5.75rem);font-weight:400;letter-spacing:-.02em;line-height:.98;margin-top:1.1rem;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.hero .lede{margin-top:1.4rem;font-size:clamp(1.1rem,1.55vw,1.28rem);line-height:1.55;color:#D8D4CB;text-shadow:0 0 24px rgba(0,0,0,.9)}
 .hero .lede em{color:var(--gold-2)}
-.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2.25rem}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:0;margin:2rem 0 0;padding:0;border-top:1px solid var(--line)}
+.hero-metrics div{padding:1rem 1.75rem 0 0;margin-right:1.75rem;border-right:1px solid var(--line)}
+.hero-metrics div:last-child{border-right:0;margin-right:0;padding-right:0}
+.hero-metrics dt{font:400 clamp(1.6rem,2.6vw,2.1rem)/1 var(--serif);color:var(--gold-2)}
+.hero-metrics dd{margin:.45rem 0 0;font:500 .62rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:1rem 1.5rem;border-radius:999px;border:1px solid var(--line-2);color:var(--ink);text-decoration:none;background:rgba(16,22,36,.6);backdrop-filter:blur(6px);transition:border-color .2s,color .2s,background .2s}
 .btn:hover{border-color:var(--gold);color:var(--gold)}
 .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .btn.primary:hover{background:var(--gold);border-color:var(--gold);color:var(--bg)}
-.social{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.75rem}
+.social{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.75rem}
 .social a{font:500 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none}
 .social a:hover{color:var(--gold)}
-.scroll-cue{margin-top:3.5rem;font:500 .65rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
-
-.stats-row{border-block:1px solid var(--line)}
-.stats-row ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:var(--wide)}
-.stats-row li{padding:1.75rem clamp(16px,3vw,32px);border-left:1px solid var(--line);display:grid;gap:.4rem}
-.stats-row li:first-child{border-left:0}
-.stats-row .v{font:400 clamp(2rem,4vw,2.8rem)/1 var(--serif);color:var(--gold-2)}
-@media (max-width:700px){.stats-row ul{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-row li:nth-child(3){border-left:0}.stats-row li:nth-child(n+3){border-top:1px solid var(--line)}}
+.scroll-cue{margin-top:2.75rem;font:500 .65rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+@media (max-width:860px){
+  .hero{min-height:0;padding-block:3rem}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;justify-items:start}
+  .hero-photo{justify-items:start}
+  .portrait{width:clamp(8.5rem,34vw,12rem)}
+  .hero-metrics div{padding-right:1.1rem;margin-right:1.1rem}
+}
 
 /* sections */
 section{padding-block:clamp(4.5rem,10vw,8rem)}
@@ -305,33 +313,34 @@ footer .copy{margin-top:4rem}
 </nav>
 
 <header class="hero" id="top" data-globe="hero">
-  <div class="wrap" style="display:grid;justify-items:center">
-    <img class="portrait" src="photos/headshot.jpg" alt="Sunskriti Jain on the UC Berkeley campus, with the Campanile behind her" width="520" height="520" fetchpriority="high">
-    <p class="label">Data Science &amp; Political Economy &nbsp;&middot;&nbsp; UC Berkeley</p>
-    <h1>Sunskriti Jain</h1>
-    <p class="lede">I grew up in Dar es Salaam watching my family&rsquo;s petroleum and logistics business grow. Now I&rsquo;m working on the question it left me with: <em>why do similar companies scale in one market and stall in another?</em></p>
-    <div class="cta">
-      <a class="btn primary" href="#pitches">See my pitches</a>
-      <a class="btn" href="mailto:sunskritijain@berkeley.edu">Get in touch</a>
+  <div class="wrap hero-grid">
+    <div class="hero-photo">
+      <img class="portrait" src="photos/headshot.jpg" alt="Sunskriti Jain on the UC Berkeley campus, with the Campanile behind her" width="520" height="520" fetchpriority="high">
     </div>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/sunskriti-jain/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://substack.com/@sunskritijain" target="_blank" rel="noopener">Substack</a>
-      <a href="https://github.com/sunskriti-jain" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:sunskritijain@berkeley.edu">Email</a>
+    <div class="hero-text">
+      <p class="label">Data Science &amp; Political Economy &nbsp;&middot;&nbsp; UC Berkeley &rsquo;29</p>
+      <h1>Sunskriti Jain</h1>
+      <p class="lede">Born in the US, raised between Dar es Salaam and Dubai. I learned how businesses really work from my family&rsquo;s petroleum and logistics company, and I&rsquo;ve been chasing the same question ever since: <em>why do similar companies scale in one market and stall in another?</em></p>
+      <dl class="hero-metrics">
+        <div><dt class="num">3.97</dt><dd>GPA</dd></div>
+        <div><dt class="num">4</dt><dd>Languages</dd></div>
+        <div><dt class="num">45+</dt><dd>Countries</dd></div>
+        <div><dt class="num">2</dt><dd>Stocks pitched</dd></div>
+      </dl>
+      <div class="cta">
+        <a class="btn primary" href="#pitches">See my pitches</a>
+        <a class="btn" href="mailto:sunskritijain@berkeley.edu">Get in touch</a>
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/sunskriti-jain/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://substack.com/@sunskritijain" target="_blank" rel="noopener">Substack</a>
+        <a href="https://github.com/sunskriti-jain" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:sunskritijain@berkeley.edu">Email</a>
+      </div>
+      <p class="scroll-cue">Scroll to explore</p>
     </div>
-    <p class="scroll-cue">Scroll to explore</p>
   </div>
 </header>
-
-<div class="stats-row solid">
-  <ul>
-    <li><span class="v num">3.97</span><span class="small">GPA &middot; Class of 2029</span></li>
-    <li><span class="v num">+24.7%</span><span class="small">Upside on my Talen long</span></li>
-    <li><span class="v num">250+</span><span class="small">Students at the Elevate panel</span></li>
-    <li><span class="v num">45+</span><span class="small">Countries photographed</span></li>
-  </ul>
-</div>
 
 <main>
 <section id="story" class="solid">
