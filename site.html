@@ -1,0 +1,1077 @@
+<title>Sunskriti Jain</title>
+<meta name="description" content="Sunskriti Jain — Data Science & Political Economy at UC Berkeley. Investing, pitches, experience, and photography from 45+ countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#07090F; --bg-2:#0B0F19; --surface:#101624; --line:#1F2738; --line-2:#2C3650;
+  --ink:#EEEAE1; --muted:#9A9FAE; --faint:#5F6678;
+  --gold:#D4B373; --gold-2:#E9D3A1; --gold-soft:rgba(212,179,115,.12); --up:#7FD6A4; --down:#E8917F;
+  --serif:"EB Garamond","Cormorant Garamond",Garamond,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --measure:38rem; --wide:72rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.1875rem/1.6 var(--serif);-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:1.5px solid var(--gold);outline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wide);margin:0 auto;padding-inline:clamp(16px,4vw,40px);position:relative}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(2.1rem,4.4vw,3.3rem);letter-spacing:-.01em}
+h3{font-size:1.55rem;letter-spacing:-.005em}
+p{margin:0}
+.label{font:500 .72rem/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.small{font:400 .8rem/1.4 var(--sans);letter-spacing:.04em;color:var(--muted)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:lining-nums tabular-nums}
+
+/* 3D globe layer */
+#globe{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(50% 45% at 50% 48%,rgba(212,179,115,.07),transparent 70%)}
+.hud{position:fixed;left:clamp(16px,3vw,32px);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:2;font:500 .68rem/1.7 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);pointer-events:none;transition:opacity .4s}
+.hud b{color:var(--gold);font-weight:500}
+.hud.off{opacity:0}
+.pin-label{position:fixed;z-index:1;left:0;top:0;pointer-events:none;font:500 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap;transform:translate(14px,-50%);transition:opacity .3s;text-shadow:0 0 12px #000}
+.pin-label.off{opacity:0}
+.page{position:relative;z-index:1}
+.solid{background:var(--bg)}
+.solid-2{background:var(--bg-2)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:linear-gradient(var(--bg),rgba(7,9,15,.7));backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;height:3.75rem}
+.nav .name{font:500 1.3rem/1 var(--serif);color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul a{font:500 .7rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.nav ul a:hover{color:var(--gold)}
+@media (max-width:760px){.nav .name{display:none}.nav .wrap{justify-content:flex-start}.nav ul{gap:1.2rem}}
+
+/* hero */
+.hero{min-height:calc(100svh - 3.75rem);display:grid;align-content:center;justify-items:center;text-align:center;padding-block:4rem 5rem}
+.hero .label{letter-spacing:.24em}
+.portrait{width:clamp(7.5rem,13vw,10rem);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:1px solid rgba(212,179,115,.55);padding:4px;margin-bottom:1.75rem;box-shadow:0 0 50px rgba(0,0,0,.75)}
+.hero h1{font-size:clamp(3.4rem,11vw,8.25rem);font-weight:400;letter-spacing:-.015em;line-height:.95;margin-top:1.5rem;text-shadow:0 0 40px rgba(0,0,0,.8)}
+.hero .lede{margin-top:1.6rem;font-size:clamp(1.2rem,2.1vw,1.45rem);line-height:1.5;max-width:36rem;color:#D8D4CB;text-shadow:0 0 24px rgba(0,0,0,.9)}
+.hero .lede em{color:var(--gold-2)}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2.25rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:1rem 1.5rem;border-radius:999px;border:1px solid var(--line-2);color:var(--ink);text-decoration:none;background:rgba(16,22,36,.6);backdrop-filter:blur(6px);transition:border-color .2s,color .2s,background .2s}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{background:var(--gold);border-color:var(--gold);color:var(--bg)}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.75rem}
+.social a{font:500 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.social a:hover{color:var(--gold)}
+.scroll-cue{margin-top:3.5rem;font:500 .65rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+
+.stats-row{border-block:1px solid var(--line)}
+.stats-row ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:var(--wide)}
+.stats-row li{padding:1.75rem clamp(16px,3vw,32px);border-left:1px solid var(--line);display:grid;gap:.4rem}
+.stats-row li:first-child{border-left:0}
+.stats-row .v{font:400 clamp(2rem,4vw,2.8rem)/1 var(--serif);color:var(--gold-2)}
+@media (max-width:700px){.stats-row ul{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-row li:nth-child(3){border-left:0}.stats-row li:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* sections */
+section{padding-block:clamp(4.5rem,10vw,8rem)}
+.head{display:grid;gap:1rem;margin-bottom:3rem;max-width:44rem}
+.head p.intro{color:var(--muted);font-size:1.15rem}
+.prose{display:grid;gap:1.15rem}
+.prose p{max-width:var(--measure)}
+.prose b{font-weight:600;color:var(--ink)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,6vw,5rem)}
+@media (max-width:880px){.two{grid-template-columns:1fr}}
+.pull{font:italic 400 clamp(1.5rem,2.8vw,2rem)/1.3 var(--serif);color:var(--gold-2);border-left:1px solid var(--gold);padding-left:1.5rem;margin-block:.75rem}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;counter-increment:s;padding-block:1.25rem;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:"0" counter(s);font:500 .75rem/2 var(--sans);letter-spacing:.14em;color:var(--gold)}
+.steps b{font-weight:600}
+
+/* pitches */
+.pitch-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.pitch-tabs button{font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:1rem 1.4rem;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--muted);cursor:pointer}
+.pitch-tabs button:hover{color:var(--ink)}
+.pitch-tabs button[aria-selected="true"]{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+.pitch{border:1px solid var(--line);background:var(--surface);border-radius:4px}
+.pitch-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:2rem;padding:2rem clamp(1.25rem,3vw,2.5rem)}
+.pitch-top h3{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:400;margin-top:.75rem}
+.pitch-top .by{margin-top:.6rem}
+.kpis{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line)}
+.kpi{padding:1rem 1.4rem;min-width:8.5rem;border-left:1px solid var(--line)}
+.kpi:first-child{border-left:0}
+.kpi .v{font:400 1.9rem/1 var(--serif)}
+.kpi .v.up{color:var(--up)}
+.kpi .k{font:500 .62rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.55rem}
+.pitch-body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.pitch-body > div{padding:1.75rem clamp(1.25rem,3vw,2.25rem);display:grid;align-content:start;gap:.9rem}
+.pitch-body > div + div{border-left:1px solid var(--line)}
+.pitch-body ul{margin:0;padding-left:1.1rem;display:grid;gap:.6rem;font-size:1.05rem;line-height:1.45}
+.pitch-body li::marker{color:var(--gold)}
+@media (max-width:880px){.pitch-body{grid-template-columns:1fr}.pitch-body > div + div{border-left:0;border-top:1px solid var(--line)}.kpi{min-width:0;flex:1}}
+.pitch-foot{padding:1.1rem clamp(1.25rem,3vw,2.5rem);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.pitch-foot .files{display:flex;flex-wrap:wrap;gap:.5rem}
+.awards{margin-top:1.25rem}
+
+/* experience + globe scrolly */
+#experience{padding-block:clamp(4.5rem,10vw,7rem) 0}
+.exp-steps{display:grid;gap:0}
+.exp-step{min-height:88vh;display:grid;align-content:center;padding-block:3rem}
+.exp-card{max-width:30rem;background:rgba(10,14,24,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:4px;padding:2rem clamp(1.25rem,3vw,2.25rem);display:grid;gap:1rem;transition:border-color .4s}
+.exp-step.active .exp-card{border-color:rgba(212,179,115,.5)}
+.exp-card .where{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.exp-card h3{font-size:2rem;font-weight:400}
+.exp-card .role{font-style:italic;color:var(--muted);margin-top:-.5rem}
+.exp-card ul{margin:0;padding-left:1.1rem;display:grid;gap:.5rem;font-size:1.03rem;line-height:1.45}
+.exp-card li::marker{color:var(--gold)}
+.lesson{border-top:1px solid var(--line);padding-top:1rem;font-size:1.05rem;line-height:1.5}
+.lesson .label{display:block;margin-bottom:.5rem}
+@media (max-width:880px){.exp-step{min-height:auto;padding-block:1.25rem}.exp-steps{padding-top:30vh;padding-bottom:10vh}.exp-card{max-width:none;background:rgba(10,14,24,.9)}}
+.exp-tail{height:12vh}
+
+/* leadership lanes */
+.axis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:0;border-top:1px solid var(--line-2);position:relative}
+.axis span{font:500 .65rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--faint);padding-top:.9rem}
+.axis span:nth-child(2){text-align:center}.axis span:nth-child(3){text-align:right}
+.axis::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.75rem}
+.lane{background:var(--surface);padding:2rem clamp(1.25rem,2.5vw,2rem);display:grid;gap:.9rem;align-content:start}
+.lane .stage{font-style:italic;color:var(--muted);font-size:1rem}
+.lane h3{font-size:1.75rem;font-weight:400}
+.lane .when{margin-top:-.4rem}
+.lane ul{margin:0;padding-left:1.1rem;display:grid;gap:.5rem;font-size:1.03rem;line-height:1.45}
+.lane li::marker{color:var(--gold)}
+@media (max-width:880px){.lanes{grid-template-columns:1fr}.axis{display:none}}
+
+.stance{border-top:1px solid var(--line);padding:1.5rem clamp(1.25rem,3vw,2.5rem);display:grid;gap:.9rem}
+.stance p{max-width:52rem;font-size:1.05rem;line-height:1.55;color:var(--muted)}
+.stance p:first-of-type{color:inherit}
+
+/* lifecycle curve */
+.life{display:grid;gap:1.5rem}
+.life-chart{position:relative;aspect-ratio:1000/330;max-width:100%;min-height:13rem}
+.life-chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.life-grid{stroke:var(--line-2);stroke-width:1;vector-effect:non-scaling-stroke}
+.life-base{fill:none;stroke:var(--line-2);stroke-width:2;vector-effect:non-scaling-stroke}
+.life-fill{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px rgba(212,179,115,.5));transition:stroke-dashoffset 1s cubic-bezier(.6,0,.2,1)}
+.life-y{position:absolute;left:0;top:0;transform:translateY(-.25rem)}
+.life-x{position:absolute;right:0;bottom:0}
+.node{position:absolute;transform:translate(-50%,-50%);background:none;border:0;padding:0;cursor:pointer;display:grid;justify-items:center;color:var(--muted)}
+.node i{width:1.25rem;height:1.25rem;border-radius:50%;border:1.5px solid var(--gold);background:var(--bg-2);transition:transform .3s,background .3s,box-shadow .3s}
+.node span{position:absolute;bottom:calc(100% + .6rem);white-space:nowrap;font:600 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:.55rem .8rem;border:1px solid var(--line-2);border-radius:999px;background:var(--bg-2);transition:color .3s,border-color .3s}
+.node:hover span{color:var(--ink)}
+.node[aria-pressed="true"] i{background:var(--gold);transform:scale(1.25);box-shadow:0 0 0 8px rgba(212,179,115,.15),0 0 24px rgba(212,179,115,.6)}
+.node[aria-pressed="true"] span{color:var(--gold);border-color:var(--gold)}
+.node[data-i="2"] span{right:-1rem}
+.life-card{border:1px solid var(--line);background:var(--surface);border-radius:4px}
+.life-pane{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:1.5rem 3rem;padding:2rem clamp(1.25rem,3vw,2.5rem)}
+.life-pane h3{font-size:2rem;font-weight:400;margin-top:.6rem}
+.life-pane .when{margin-top:.5rem}
+.life-pane .q{margin-top:1.25rem;font-style:italic;font-size:1.15rem;color:var(--gold-2)}
+.life-pane .q .label{display:block;font-style:normal;margin-bottom:.45rem}
+.life-pane ul{margin:0;padding-left:1.1rem;display:grid;gap:.6rem;align-content:center;font-size:1.05rem;line-height:1.45}
+.life-pane li::marker{color:var(--gold)}
+@media (max-width:760px){.life-pane{grid-template-columns:1fr}.node span{font-size:.58rem;padding:.45rem .6rem;letter-spacing:.12em}.life-chart{margin-top:2rem}}
+
+/* proud */
+.proud{display:grid;gap:clamp(3.5rem,7vw,6rem)}
+.feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.feature.flip{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.feature.flip .media{order:2}
+@media (max-width:880px){.feature,.feature.flip{grid-template-columns:1fr}.feature.flip .media{order:0}}
+.talk-card{display:grid;gap:1.5rem;text-decoration:none;color:var(--ink);border:1px solid var(--line-2);background:linear-gradient(160deg,#141B2C,#0A0E18);border-radius:4px;padding:clamp(1.75rem,3vw,2.5rem);min-height:18rem;align-content:space-between;transition:border-color .3s}
+.talk-card:hover{border-color:var(--gold)}
+.talk-card .t{font:400 clamp(1.9rem,3.2vw,2.5rem)/1.12 var(--serif)}
+.talk-card .play{display:inline-flex;align-items:center;gap:.8rem;font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.talk-card .play i{width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-style:normal;font-size:.8rem}
+.flyer{display:block;width:100%;max-width:26rem;height:auto;aspect-ratio:900/1125;object-fit:contain;border:1px solid var(--line);border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+/* interests orbit (CSS 3D) */
+.orbit{display:grid;gap:1.5rem}
+.orbit-stage{position:relative;height:clamp(19rem,42vw,24rem);perspective:1100px;perspective-origin:50% 40%;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.orbit-stage.drag{cursor:grabbing}
+.orbit-stage::after{content:"";position:absolute;left:50%;bottom:6%;width:min(70%,34rem);height:1.5rem;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(212,179,115,.22),transparent);pointer-events:none}
+.ring{position:absolute;left:50%;top:44%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.tile{position:absolute;left:calc(var(--tw) / -2);top:calc(var(--th) / -2);width:var(--tw);height:var(--th);display:grid;align-content:space-between;justify-items:start;gap:.75rem;padding:1.25rem;border:1px solid var(--line-2);border-radius:4px;background:linear-gradient(165deg,#161E31,#0B101B);color:var(--ink);text-align:left;cursor:pointer;font:inherit;backface-visibility:hidden;transition:border-color .3s,box-shadow .3s}
+.tile svg{width:2.4rem;height:2.4rem;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.tile .tn{font:400 1.35rem/1.1 var(--serif)}
+.tile .tk{font:500 .6rem/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tile[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 40px rgba(212,179,115,.18)}
+.orbit{--tw:10.5rem;--th:12.5rem}
+@media (max-width:640px){.orbit{--tw:8.5rem;--th:10.5rem}.tile{padding:1rem}.tile .tn{font-size:1.15rem}}
+.orbit-ctrl{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem;align-items:center;max-width:40rem;margin:0 auto;width:100%}
+.orbit-ctrl .btn{padding:.9rem 1.1rem;font-size:.9rem;letter-spacing:0}
+.orbit-detail{display:grid;gap:.9rem;min-height:5.5rem;align-content:start;text-align:left;max-width:42rem;margin:0 auto;width:100%}
+.orbit-detail .top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+.orbit-detail h3{font-size:clamp(1.7rem,3vw,2.2rem);font-weight:400}
+.orbit-detail p,.orbit-detail li{font-size:1.08rem;line-height:1.55}
+.orbit-detail ul{margin:0;padding-left:1.1rem;display:grid;gap:.7rem}
+.orbit-detail li::marker{color:var(--gold)}
+.orbit-detail b{font-weight:600}
+.orbit-ctrl{align-items:start}
+.orbit-ctrl .btn{margin-top:.25rem}
+@media (max-width:640px){.orbit-ctrl{grid-template-columns:1fr 1fr}.orbit-detail{grid-column:1/-1;grid-row:1}}
+
+/* pitch scorecard */
+.track{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);border-top:1px solid var(--line)}
+.track-stats{display:grid;grid-template-columns:1fr 1fr;align-content:start;border-right:1px solid var(--line)}
+.track-stats div{padding:1.1rem 1.25rem;border-bottom:1px solid var(--line)}
+.track-stats div:nth-child(odd){border-right:1px solid var(--line)}
+.track-stats .v{font:400 1.45rem/1 var(--serif);font-variant-numeric:lining-nums tabular-nums}
+.track-stats .k{font:500 .6rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+.track-stats .note{grid-column:1/-1;border:0;padding:1rem 1.25rem}
+.up-t{color:var(--up)}.down-t{color:var(--down)}
+.track-chart{position:relative;padding:1.25rem clamp(1rem,2.5vw,1.75rem) .75rem;min-width:0}
+.track-chart .head-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.track-chart svg{display:block;width:100%;height:190px;overflow:visible}
+.track-chart .ref{stroke:var(--line-2);stroke-dasharray:3 5;stroke-width:1}
+.track-chart .ref.tg{stroke:var(--gold);opacity:.55}
+.track-chart .reflab{font:500 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;fill:var(--muted)}
+.track-chart .line{fill:none;stroke:var(--gold);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.track-chart .axis-lab{font:500 10px var(--sans);letter-spacing:.08em;fill:var(--faint)}
+.track-chart .cross{stroke:var(--muted);stroke-width:1}
+.track-chart .end{fill:var(--gold);stroke:var(--surface);stroke-width:2}
+.tip{position:absolute;pointer-events:none;background:var(--bg);border:1px solid var(--line-2);border-radius:4px;padding:.45rem .65rem;font:500 .72rem/1.35 var(--sans);color:var(--ink);white-space:nowrap;transform:translate(-50%,-115%);opacity:0;transition:opacity .15s}
+.tip span{color:var(--muted);display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:880px){.track{grid-template-columns:1fr}.track-stats{border-right:0}}
+.firms{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin-top:.25rem}
+.firms span{font:500 .68rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:.55rem .8rem}
+.big-num{font:400 clamp(3rem,6vw,4.5rem)/1 var(--serif);color:var(--gold-2)}
+
+/* learning */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.item{background:var(--surface);padding:1.75rem;display:grid;gap:.6rem;align-content:start}
+.item h3{font-size:1.45rem}
+.item p{font-size:1.03rem;line-height:1.5}
+.item-soon{background:transparent;border:1px dashed var(--line-2);margin:-1px}
+.item-soon h3{color:var(--gold-2);font-style:italic}
+
+/* photos */
+.photos{columns:3 17rem;column-gap:10px}
+.photos figure{margin:0 0 10px;break-inside:avoid;position:relative;overflow:hidden;background:var(--surface);border-radius:2px}
+.photos button{all:unset;display:block;cursor:zoom-in;width:100%}
+.photos button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.photos img{width:100%;height:auto;transition:transform .6s ease,filter .6s}
+.photos figure:hover img{transform:scale(1.03)}
+.photos figcaption{position:absolute;inset:auto 0 0 0;padding:2rem 1rem .8rem;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font:500 .68rem/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:0;transition:opacity .3s;pointer-events:none}
+.photos figure:hover figcaption,.photos figure:focus-within figcaption{opacity:1}
+@media (hover:none){.photos figcaption{opacity:1}}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,1400px);max-height:92vh}
+dialog::backdrop{background:rgba(3,5,10,.94)}
+dialog img{max-height:82vh;width:auto;margin:0 auto}
+dialog p{color:var(--ink);font:500 .72rem/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-align:center;margin-top:1rem}
+dialog .x{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:16px;background:transparent;color:var(--ink);border:1px solid var(--line-2);border-radius:999px;font:600 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:.8rem 1.1rem;cursor:pointer}
+
+.list-inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:0 3rem;list-style:none;margin:0;padding:0}
+.list-inline li{padding-block:1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem}
+.list-inline li span:last-child{color:var(--muted);text-align:right}
+
+footer{padding-block:6rem 3rem;border-top:1px solid var(--line);text-align:center}
+footer h2{font-size:clamp(2.6rem,7vw,5rem);font-weight:400}
+footer p.intro{max-width:32rem;margin:1.25rem auto 0;color:var(--muted)}
+footer .copy{margin-top:4rem}
+</style>
+
+<canvas id="globe" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+<div class="pin-label off" id="pin-label" aria-hidden="true"></div>
+<div class="hud" id="hud" aria-hidden="true"><div>Now facing</div><div><b id="hud-city">Dar es Salaam</b></div><div id="hud-coord" class="num">06.79&deg; S &middot; 39.21&deg; E</div></div>
+
+<div class="page">
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="name" href="#top">Sunskriti Jain</a>
+    <ul>
+      <li><a href="#story">About</a></li>
+      <li><a href="#pitches">Pitches</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#proud">Highlights</a></li>
+      <li><a href="#photos">Photography</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top" data-globe="hero">
+  <div class="wrap" style="display:grid;justify-items:center">
+    <img class="portrait" src="photos/headshot.jpg" alt="Sunskriti Jain on the UC Berkeley campus, with the Campanile behind her" width="520" height="520" fetchpriority="high">
+    <p class="label">Data Science &amp; Political Economy &nbsp;&middot;&nbsp; UC Berkeley</p>
+    <h1>Sunskriti Jain</h1>
+    <p class="lede">I grew up in Dar es Salaam watching my family&rsquo;s petroleum and logistics business grow. Now I&rsquo;m working on the question it left me with: <em>why do similar companies scale in one market and stall in another?</em></p>
+    <div class="cta">
+      <a class="btn primary" href="#pitches">See my pitches</a>
+      <a class="btn" href="mailto:sunskritijain@berkeley.edu">Get in touch</a>
+    </div>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/sunskriti-jain/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@sunskritijain" target="_blank" rel="noopener">Substack</a>
+      <a href="https://github.com/sunskriti-jain" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:sunskritijain@berkeley.edu">Email</a>
+    </div>
+    <p class="scroll-cue">Scroll to explore</p>
+  </div>
+</header>
+
+<div class="stats-row solid">
+  <ul>
+    <li><span class="v num">3.97</span><span class="small">GPA &middot; Class of 2029</span></li>
+    <li><span class="v num">+24.7%</span><span class="small">Upside on my Talen long</span></li>
+    <li><span class="v num">250+</span><span class="small">Students at the Elevate panel</span></li>
+    <li><span class="v num">45+</span><span class="small">Countries photographed</span></li>
+  </ul>
+</div>
+
+<main>
+<section id="story" class="solid">
+  <div class="wrap two">
+    <div class="head" style="margin:0">
+      <p class="label">About</p>
+      <h2>I learned business from the operator&rsquo;s side first.</h2>
+    </div>
+    <div class="prose">
+      <p>I was born in the US, but I grew up in Dar es Salaam, and I&rsquo;m ethnically Indian. My family runs a petroleum and logistics business, and I watched it go from a scrappy operation to a professionalized company. Before I ever took a finance class, I&rsquo;d seen how owners actually weigh risk against growth: pricing, credit lines, leverage, and supply constraints, and how each of those calls ends up affecting real people.</p>
+      <p>Traveling made one pattern hard to ignore. Companies with similar products and similar effort would scale in one country and stall in another. The difference usually wasn&rsquo;t hustle. It was the structure around the business: access to capital, incentives, when to expand, and whether they invested in the right capabilities early enough.</p>
+      <p>That&rsquo;s why I study Data Science and Political Economy together. One gives me the tools to work with messy data; the other explains why the same business behaves differently under different rules.</p>
+    </div>
+  </div>
+</section>
+
+<section id="investing" class="solid-2">
+  <div class="wrap two">
+    <div class="prose">
+      <p class="label">Investing</p>
+      <h2 style="margin-bottom:.5rem">Why I want to sit on the other side of the table.</h2>
+      <p>Growing up around an operating business, I kept wondering who writes the rules of scaling: who decides which founders and business models get capital, and on what terms. Investing is where business fundamentals turn into real allocation decisions. That&rsquo;s the seat I want to learn to sit in.</p>
+      <p>I joined the <b>Berkeley Investment Group</b>, Berkeley&rsquo;s student-run hedge fund, to get reps. After a 12-week program in value investing, modeling, and pitch development, I now write theses as an L/S equities analyst on the TMT and Industrials pods of a $150K fund.</p>
+      <p class="pull">I&rsquo;m a value investor at heart. I start where sentiment and price have drifted apart, then make the numbers prove it.</p>
+    </div>
+    <div>
+      <p class="label" style="margin-bottom:1.5rem">How I find an idea</p>
+      <ol class="steps">
+        <li><div><b>Read the sentiment.</b> I start with what the market is worried or excited about, and look for places where the story has run ahead of, or fallen behind, the fundamentals.</div></li>
+        <li><div><b>Screen the multiples.</b> I check valuation against peers to see whether the gap is real or just noise.</div></li>
+        <li><div><b>Model it out.</b> A revenue build, DCF, and trading comps. If the valuation doesn&rsquo;t hold up in the model, I don&rsquo;t pitch the idea.</div></li>
+        <li><div><b>Hunt for variance.</b> The hardest part is finding a view the market doesn&rsquo;t already hold. That&rsquo;s why I lean on alternative data: for Snap, we tracked SMB job postings and four years of app-review language.</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="pitches" class="solid">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Pitches</p>
+      <h2>Two longs, with the decks and models behind them.</h2>
+      <p class="intro">Every figure here comes from my own models, and each pitch keeps score: the chart tracks the stock from the day I pitched it, updated every trading day. Open the deck for the full story, or the Excel file to check my assumptions.</p>
+    </div>
+
+    <div class="pitch-tabs" role="tablist" aria-label="Choose a pitch">
+      <button role="tab" id="tab-tln" aria-controls="pitch-tln" aria-selected="true">Talen Energy &middot; TLN</button>
+      <button role="tab" id="tab-snap" aria-controls="pitch-snap" aria-selected="false">Snap Inc. &middot; SNAP</button>
+    </div>
+
+    <article class="pitch" id="pitch-tln" role="tabpanel" aria-labelledby="tab-tln">
+      <div class="pitch-top">
+        <div>
+          <p class="label">Long &middot; NASDAQ: TLN</p>
+          <h3>Talen Energy</h3>
+          <p class="by small">Solo pitch &middot; Berkeley Investment Group &middot; Spring 2026</p>
+        </div>
+        <div class="kpis num">
+          <div class="kpi"><div class="v">$433.61</div><div class="k">Price target</div></div>
+          <div class="kpi"><div class="v up">+24.7%</div><div class="k">Upside</div></div>
+          <div class="kpi"><div class="v">10.0%</div><div class="k">WACC</div></div>
+        </div>
+      </div>
+      <div class="track" data-ticker="TLN" aria-label="Talen Energy scorecard since the pitch"></div>
+      <div class="stance">
+        <p class="label">Where it stands now</p>
+        <p>TLN is trading below where I pitched it, and honestly, that&rsquo;s what merchant power does. Independent power producers are cyclical: earnings move with spot power prices, capacity auction outcomes, and fuel costs, so the market prices them on sentiment quarter to quarter. Add the debt Talen raised to fund its acquisitions, and you get exactly this kind of drawdown.</p>
+        <p>My thesis was never a quarter-long trade. It&rsquo;s that contracted, infrastructure-like cash flows get valued at a higher multiple than merchant ones, and that re-rating happens on events, not on a schedule: the front-of-meter switch completing, a second hyperscaler PPA, and the first full quarter of $270/MW-day capacity prices showing up in EBITDA. Until those land, I&rsquo;d expect the stock to keep trading with the cycle. If they don&rsquo;t land, I&rsquo;m wrong, and the scorecard above will say so.</p>
+      </div>
+      <div class="pitch-body">
+        <div>
+          <p class="label">Thesis</p>
+          <ul>
+            <li><b>Talen built the hyperscaler nuclear template.</b> The market treats the $18B AWS deal as a one-off. I think it proves a repeatable model, since the regulatory path is already cleared for the next hyperscaler.</li>
+            <li><b>The flywheel re-rates acquisitions.</b> Acquire merchant plants, contract them, and watch EBITDA compound regardless of spot prices.</li>
+            <li><b>The gas fleet is underpriced.</b> RMR contracts, hyperscaler contracting, and a deliberately unhedged 2027 to capture spot upside.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">Catalysts</p>
+          <ul>
+            <li>The front-of-meter switch completes cleanly, which proves the template is repeatable</li>
+            <li>A second hyperscaler PPA. Even an LOI or management commentary could trigger a re-rating</li>
+            <li>Q3 2026 earnings: the first full quarter at $270/MW-day capacity prices, with EBITDA of $400M+</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">What would make me wrong</p>
+          <ul>
+            <li>Hyperscalers want only nuclear, which breaks the gas side of the flywheel</li>
+            <li>The 60% unhedged 2027 position is exposed if spot prices fall</li>
+            <li>NRC approval for co-location at Montour isn&rsquo;t guaranteed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pitch-foot">
+        <span class="small">DCF + EV/EBITDA comps (AES, Entergy, NRG, Constellation&hellip;) &middot; $347.74 at pitch</span>
+        <div class="files">
+          <a class="btn" href="files/Sunskriti-Jain-TLN-Deck.pdf" target="_blank" rel="noopener">Deck &middot; PDF</a>
+          <a class="btn" href="files/Sunskriti-Jain-TLN-Model.xlsx">Model &middot; Excel</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pitch" id="pitch-snap" role="tabpanel" aria-labelledby="tab-snap" hidden>
+      <div class="pitch-top">
+        <div>
+          <p class="label">Long &middot; NYSE: SNAP</p>
+          <h3>Snap Inc.</h3>
+          <p class="by small">Midterm team pitch with Ritika Rawat &amp; Saksham Uboweja &middot; Mar 2026</p>
+        </div>
+        <div class="kpis num">
+          <div class="kpi"><div class="v">$6.11</div><div class="k">Price target</div></div>
+          <div class="kpi"><div class="v up">+34.7%</div><div class="k">Upside</div></div>
+          <div class="kpi"><div class="v">1.33x</div><div class="k">EV / NTM revenue</div></div>
+        </div>
+      </div>
+      <div class="track" data-ticker="SNAP" aria-label="Snap scorecard since the pitch"></div>
+      <div class="stance">
+        <p class="label">Where it stands now</p>
+        <p>SNAP is up since we pitched it and is now trading close to our price target, so most of the gap we identified has closed. The open question is the one we flagged: whether the Perplexity deal and the shift to SMB advertisers show up in reported revenue, or whether the move was just sentiment catching up.</p>
+      </div>
+      <div class="pitch-body">
+        <div>
+          <p class="label">Thesis</p>
+          <ul>
+            <li><b>An SMB flywheel drives CPM growth.</b> The Street sees ad volatility as a Snap problem. We saw it as a large-enterprise problem, with SMBs (growing 25%+ as a share of ad revenue) replacing big brands and adding auction density.</li>
+            <li><b>Engagement depth is undervalued.</b> The market anchors on slowing DAU growth and misses time spent, retention, and outside demand for Snap&rsquo;s engagement, like the Perplexity deal.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">Alternative data we used</p>
+          <ul>
+            <li>SMB job postings that mention Snapchat Ads: 82% tied directly to the ad platform</li>
+            <li>App-review language: the share of &ldquo;utility&rdquo; mentions grew from 20% to 38% (Q1&rsquo;21&ndash;Q1&rsquo;25)</li>
+            <li>Snap&rsquo;s engineering output (recommendation-system papers, Camera Kit SDKs) as a read on engagement</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">What would make us wrong</p>
+          <ul>
+            <li>The Perplexity deal is delayed or underperforms</li>
+            <li>The shift from large clients to SMBs stalls. We watch for large-client share dropping below 40% as the confirmation signal</li>
+            <li>Creator subscriptions cannibalize ad spend</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pitch-foot">
+        <span class="small">EV/Revenue comps (Google, Meta, Reddit, The Trade Desk&hellip;), since SNAP is barely profitable</span>
+        <div class="files">
+          <a class="btn" href="files/SNAP-Pitch-Deck.pdf" target="_blank" rel="noopener">Deck &middot; PDF</a>
+          <a class="btn" href="files/SNAP-Pitch-Model.xlsx">Model &middot; Excel</a>
+        </div>
+      </div>
+    </article>
+    <p class="small awards">Also: Finalist, USIT Texas Stock Pitch Competition &nbsp;&middot;&nbsp; Finalist, Leerink Partners Investment Banking Case Competition</p>
+  </div>
+</section>
+
+<section id="experience" data-globe="exp">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <p class="label">Experience &middot; Three continents in 2026</p>
+      <h2 style="text-shadow:0 0 30px #000">Where I&rsquo;ve done the work.</h2>
+      <p class="intro" style="text-shadow:0 0 20px #000">Scroll through. The globe turns to each place I&rsquo;ve worked, starting with the most recent.</p>
+    </div>
+    <div class="exp-steps">
+      <article class="exp-step" data-place="0">
+        <div class="exp-card">
+          <div class="where"><span class="label">Denver, CO</span><span class="small num">Sep 2026 &ndash; Present</span></div>
+          <h3>Irving Investors</h3>
+          <p class="role">Fall Investment Analyst</p>
+          <ul>
+            <li>Built peer sets and public comps for Nscale&rsquo;s S-1, and synthesized the valuation work behind a $25M pre-IPO AI position</li>
+            <li>Sat in on buy-side management calls and researched semiconductors and healthcare to inform long/short theses</li>
+            <li>Read SEC filings and earnings transcripts to distill competitive dynamics and key debates across portfolio companies</li>
+          </ul>
+          <p class="lesson"><span class="label">What it taught me</span>A pre-IPO position is really a view on how public investors will price the company. Building Nscale&rsquo;s comp set showed me how much of valuation comes down to which peers you pick, and why.</p>
+        </div>
+      </article>
+      <article class="exp-step" data-place="1">
+        <div class="exp-card">
+          <div class="where"><span class="label">Dar es Salaam, Tanzania</span><span class="small num">Jun &ndash; Aug 2026</span></div>
+          <h3>RSM International</h3>
+          <p class="role">Finance &amp; Compliance Intern</p>
+          <ul>
+            <li>Resolved accounting, payroll, and tax discrepancies across 150+ clients through Excel reconciliations and direct client outreach</li>
+            <li>Built Alteryx workflows that automated reconciliation, cutting manual effort by 30%+</li>
+            <li>Handled bookkeeping and Z-report filings in Xero to keep client accounts compliant</li>
+          </ul>
+          <p class="lesson"><span class="label">What it taught me</span>Most discrepancies traced back to manual processes, not bad intent. Fixing the workflow in Alteryx did more than fixing any single account, which is the same lesson Mount Meru taught me from the other side.</p>
+        </div>
+      </article>
+      <article class="exp-step" data-place="2">
+        <div class="exp-card">
+          <div class="where"><span class="label">Dubai, UAE</span><span class="small num">May &ndash; Aug 2026</span></div>
+          <h3>Mount Meru Group</h3>
+          <p class="role">Summer Investment Analyst</p>
+          <ul>
+            <li>Managed $20M+ AUM across commodities, equities, and venture positions. My live Excel P&amp;L tracker with entry/exit signals helped preserve ~$4M in capital, with 26%+ returns across 5+ asset classes</li>
+            <li>Worked with government officials to speed up terminal operations (a 4-hour daily gain) while negotiating credit lines and evaluating cross-border commodity hedges</li>
+            <li>Helped grow diesel and petrol sales to 5M+ liters loaded daily, onboarding ~3 new long-term accounts a week</li>
+          </ul>
+          <p class="lesson"><span class="label">What it taught me</span>This is what business looks like before the software layer exists. Most of the 4-hour gain came from replacing phone calls and scattered spreadsheets with clean data flows. Huge parts of the global economy are still early in basic automation, and that&rsquo;s an investable gap.</p>
+        </div>
+      </article>
+      <article class="exp-step" data-place="3">
+        <div class="exp-card">
+          <div class="where"><span class="label">San Francisco, CA</span><span class="small num">Jan &ndash; Jun 2026</span></div>
+          <h3>Chakra Growth Capital</h3>
+          <p class="role">Growth Equity Spring Analyst</p>
+          <ul>
+            <li>Diligenced 30+ startups across 5 climate segments, focusing on revenue models and customer concentration</li>
+            <li>Wrote a 20+ page report on climate and data infrastructure, mapping 50+ US&ndash;India startups, their competitors, and their timelines</li>
+          </ul>
+          <p class="lesson"><span class="label">What it taught me</span>The same problem gets solved very differently depending on the market. India&rsquo;s scale and price sensitivity force lean, modular software, while US adoption is driven by enterprise budgets and compliance. The rare companies that work in both are the most interesting to me. And because I was screening inbound deals, my work shaped which founders got a meeting.</p>
+        </div>
+      </article>
+    </div>
+    <div class="exp-tail"></div>
+  </div>
+</section>
+
+<section id="leadership" class="solid-2">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Leadership &middot; Across the capital stack</p>
+      <h2>Learning to invest at every stage of a company&rsquo;s life.</h2>
+      <p class="intro">On campus I&rsquo;ve spread myself across early-stage venture, private equity, and public markets on purpose, so I can see how the same questions change as a company matures. Select a stage on the curve.</p>
+    </div>
+    <div class="life" id="life">
+      <div class="life-chart">
+        <svg viewBox="0 0 1000 330" preserveAspectRatio="none" aria-hidden="true">
+          <line class="life-grid" x1="40" y1="300" x2="960" y2="300"/>
+          <line class="life-grid" x1="40" y1="300" x2="40" y2="20"/>
+          <path class="life-base" d="M40 286.2 L60 285.5 L80 284.6 L100 283.6 L120 282.3 L140 280.9 L160 279.1 L180 277.1 L200 274.7 L220 271.8 L240 268.5 L260 264.7 L280 260.2 L300 255.1 L320 249.3 L340 242.7 L360 235.3 L380 227.1 L400 218.2 L420 208.6 L440 198.3 L460 187.5 L480 176.3 L500 165.0 L520 153.7 L540 142.5 L560 131.7 L580 121.4 L600 111.8 L620 102.9 L640 94.7 L660 87.3 L680 80.7 L700 74.9 L720 69.8 L740 65.3 L760 61.5 L780 58.2 L800 55.3 L820 52.9 L840 50.9 L860 49.1 L880 47.7 L900 46.4 L920 45.4 L940 44.5 L960 43.8"/>
+          <path class="life-fill" id="life-fill" d="M40 286.2 L60 285.5 L80 284.6 L100 283.6 L120 282.3 L140 280.9 L160 279.1 L180 277.1 L200 274.7 L220 271.8 L240 268.5 L260 264.7 L280 260.2 L300 255.1 L320 249.3 L340 242.7 L360 235.3 L380 227.1 L400 218.2 L420 208.6 L440 198.3 L460 187.5 L480 176.3 L500 165.0 L520 153.7 L540 142.5 L560 131.7 L580 121.4 L600 111.8 L620 102.9 L640 94.7 L660 87.3 L680 80.7 L700 74.9 L720 69.8 L740 65.3 L760 61.5 L780 58.2 L800 55.3 L820 52.9 L840 50.9 L860 49.1 L880 47.7 L900 46.4 L920 45.4 L940 44.5 L960 43.8"/>
+        </svg>
+        <span class="life-y small">Company scale</span>
+        <span class="life-x small">Time &rarr;</span>
+        <button type="button" class="node" data-i="0" style="left:20%;top:83.2%" aria-pressed="true"><i></i><span>Venture</span></button>
+        <button type="button" class="node" data-i="1" style="left:50%;top:50%" aria-pressed="false"><i></i><span>Private equity</span></button>
+        <button type="button" class="node" data-i="2" style="left:82%;top:16%" aria-pressed="false"><i></i><span>Public markets</span></button>
+      </div>
+      <div class="life-card" id="life-card" aria-live="polite">
+        <article class="life-pane" data-i="0">
+          <div>
+            <p class="label">Stage 1 &middot; Venture capital</p>
+            <h3>Free Ventures</h3>
+            <p class="small when">Venture Associate &middot; May 2026 &ndash; Present</p>
+            <p class="q"><span class="label">The question at this stage</span>Can this team find product&ndash;market fit before the money runs out?</p>
+          </div>
+          <ul>
+            <li>Advise 10+ early-stage student startups. Portfolio companies have raised from YC, Kleiner Perkins, and Greylock</li>
+            <li>Host speakers from firms like Citadel and Base Power, and run weekly mixers for Cal&rsquo;s finance community</li>
+          </ul>
+        </article>
+        <article class="life-pane" data-i="1" hidden>
+          <div>
+            <p class="label">Stage 2 &middot; Private equity</p>
+            <h3>Roark Capital</h3>
+            <p class="small when">Wall Street Club Fellow &middot; Aug 2026 &ndash; Present</p>
+            <p class="q"><span class="label">The question at this stage</span>Can we make a proven business better, and exit at a higher value?</p>
+          </div>
+          <ul>
+            <li>15-week fellowship on LP/GP fund structures, M&amp;A deal types, and PE/IB recruiting</li>
+            <li>Networked with 15+ boutique and investment banks on a trek to NYC</li>
+          </ul>
+        </article>
+        <article class="life-pane" data-i="2" hidden>
+          <div>
+            <p class="label">Stage 3 &middot; Public markets</p>
+            <h3>Berkeley Investment Group</h3>
+            <p class="small when">L/S Equities Analyst &middot; Jan 2026 &ndash; Present</p>
+            <p class="q"><span class="label">The question at this stage</span>What is the market mispricing, and what will make it see it?</p>
+          </div>
+          <ul>
+            <li>Equity theses and valuations for a $150K AUM student hedge fund, covering the TMT and Industrials pods</li>
+            <li>Pitched Talen Energy and Snap, both long. See both pitches above</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proud" class="solid">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">What I&rsquo;m proudest of</p>
+      <h2>Getting the right people into the same room.</h2>
+    </div>
+    <div class="proud">
+      <div class="feature">
+        <div class="media">
+          <a class="talk-card" href="https://www.youtube.com/watch?v=hdF4m1SXnuA" target="_blank" rel="noopener">
+            <span class="label">TEDxUpanga Youth &middot; Dar es Salaam</span>
+            <span class="t">How to make youth reintegration more just</span>
+            <span class="play"><i aria-hidden="true">&#9654;</i> Watch the talk</span>
+          </a>
+        </div>
+        <div class="prose">
+          <p class="label">TEDx talk</p>
+          <h3 style="font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:400">A talk that turned into computers for kids in detention.</h3>
+          <p>My TEDx talk was about my work with juvenile offenders in Tanzania, and why reintegration fails when young people come out with no practical skills and a community that has already written them off.</p>
+          <p>After the talk, a local church reached out to partner with me. Together we donated computers so the youth could learn Microsoft Office and basic accounting before going back into society. The partnership also changed how the wider community saw them: less prejudice, more willingness to back their growth.</p>
+        </div>
+      </div>
+
+      <div class="feature flip">
+        <div class="media">
+          <img class="flyer" src="photos/elevate-flyer.jpg" alt="Flyer for the Elevate Investment Banking Panel, November 18, 2025, Dwinelle 145, Berkeley, featuring MDs and VPs from Qatalyst, J.P. Morgan, Morgan Stanley, Lazard, Moelis, Bank of America, and Evercore" width="900" height="1125" loading="lazy">
+        </div>
+        <div class="prose">
+          <p class="label">Elevate &middot; Investment Banking Panel &middot; Nov 18, 2025</p>
+          <h3 style="font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:400">An IB panel we built from cold emails.</h3>
+          <p>With a few classmates, I co-hosted the 2025 Elevate Investment Banking Panel, which brought together bankers from eight top firms across the Bay Area. We cold-emailed managing directors and VPs to build the panel, covering Technology, Software, Emerging Growth, and Regional Coverage groups.</p>
+          <p>Our panelists were managing directors and VPs from Morgan Stanley, J.P. Morgan, Qatalyst Partners, Evercore, Lazard, Moelis &amp; Company, Barclays, and Bank of America.</p>
+          <p>We designed it for anyone curious about how deals get done, not just students already recruiting. The panel covered the day-to-day across different groups, how firms navigate market cycles, rates, and regulatory shifts, and how to build a career in a high-performance environment. It was open to every major and class year.</p>
+          <div><span class="big-num num">250+</span><p class="small" style="margin-top:.4rem">Berkeley students in Dwinelle 145 for the panel, open Q&amp;A, networking, and resume drop</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="learning" class="solid-2">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">What I&rsquo;m learning right now</p>
+      <h2>On my desk and in my ears.</h2>
+    </div>
+    <div class="shelf">
+      <article class="item">
+        <p class="label">Book</p>
+        <h3>The Heart of Business</h3>
+        <p class="small">Hubert Joly</p>
+        <p>Joly&rsquo;s account of the Best Buy turnaround, which took the stock up almost 3x. It changed how I think about turnarounds: he didn&rsquo;t cut his way out. He price-matched Amazon, turned the stores into an advantage, and bet on employees as the growth engine.</p>
+      </article>
+      <article class="item">
+        <p class="label">Podcast</p>
+        <h3>Uncapped with Jack Altman</h3>
+        <p>Long conversations with founders and investors on how companies actually get built. It&rsquo;s my way into the private-markets side.</p>
+      </article>
+      <article class="item">
+        <p class="label">Show</p>
+        <h3>TBPN</h3>
+        <p>My daily catch-up on what&rsquo;s moving in tech and public markets, and on which narratives are forming before they show up in the multiples.</p>
+      </article>
+      <article class="item">
+        <p class="label">Substack &middot; New territory</p>
+        <h3>SACR &amp; cybersecurity</h3>
+        <p>I&rsquo;m teaching myself how cybersecurity businesses are built and valued, starting with Software Analyst Cyber Research&rsquo;s deep dives.</p>
+      </article>
+      <article class="item">
+        <p class="label">Book</p>
+        <h3>Crime and Punishment</h3>
+        <p class="small">Fyodor Dostoevsky</p>
+        <p>Dostoevsky&rsquo;s study of a man who talks himself into believing he&rsquo;s above the rules. A good reminder of how convincing a flawed argument can feel from the inside.</p>
+      </article>
+      <article class="item">
+        <p class="label">Podcast</p>
+        <h3>Invest Like the Best</h3>
+        <p class="small">Patrick O&rsquo;Shaughnessy</p>
+        <p>Long-form interviews with investors and operators about how they actually make decisions. I listen for the frameworks, not the stock tips.</p>
+      </article>
+      <article class="item item-soon">
+        <p class="label">Up next</p>
+        <h3>More coming soon.</h3>
+        <p>This shelf changes as I read. Check back, or email me your best recommendation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="recalc" class="solid">
+  <div class="wrap two">
+    <div class="head" style="margin:0">
+      <p class="label">Why Recalc</p>
+      <h2>What I&rsquo;m looking for, and what I&rsquo;ll give back.</h2>
+    </div>
+    <div class="prose">
+      <p><b>What I want.</b> A community of people who take investing seriously and will pressure-test my thinking. I&rsquo;ve built most of my finance skills on my own, through pitches, case competitions, and internships, and I&rsquo;m ready for the structure and the honest feedback of people a few steps ahead of me.</p>
+      <p><b>What I bring.</b> I&rsquo;m a giver by default. I helped cold-email our way to eight banks for Elevate, and at Free Ventures I run the weekly mixers, because I like building rooms where people help each other. I also bring a perspective most finance programs don&rsquo;t have: I&rsquo;ve seen businesses operate in East Africa, the Gulf, India, and the US, including what it looks like when the infrastructure doesn&rsquo;t exist yet.</p>
+      <p><b>And grit.</b> I learned early to keep going when things don&rsquo;t get easier. I&rsquo;ll show up to every session, do the homework properly, and answer in the Slack.</p>
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="solid-2">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Photography &middot; 45+ countries</p>
+      <h2>Frames from the road.</h2>
+      <p class="intro">A few favorites from trips and from home. Select any photo to enlarge it.</p>
+    </div>
+    <div class="photos" id="gallery">
+      <figure><button type="button"><img src="photos/midnight-sun.jpg" alt="Lake at midnight under a thin band of light, Finland" loading="lazy" width="1600" height="1066"></button><figcaption>Midnight sun &middot; Finland</figcaption></figure>
+      <figure><button type="button"><img src="photos/interlaken.jpg" alt="Me screaming on a tandem hang glider while my instructor pretends to have passed out" loading="lazy" width="1600" height="1200"></button><figcaption>Hang-gliding in Interlaken. We posed to make it look like my instructor had passed out</figcaption></figure>
+      <figure><button type="button"><img src="photos/candles.jpg" alt="Thin beeswax candles burning on a brass stand in an Orthodox church" loading="lazy" width="1600" height="1066"></button><figcaption>Orthodox cathedral &middot; Tallinn</figcaption></figure>
+      <figure><button type="button"><img src="photos/noordhoek.jpg" alt="Long white beach and dunes under heavy clouds" loading="lazy" width="1600" height="1200"></button><figcaption>First time in South Africa &middot; Noordhoek</figcaption></figure>
+      <figure><button type="button"><img src="photos/dar-dusk.jpg" alt="Silhouetted tree over the Indian Ocean at dusk" loading="lazy" width="1600" height="1067"></button><figcaption>Home &middot; Dar es Salaam</figcaption></figure>
+      <figure><button type="button"><img src="photos/nyhavn.jpg" alt="Colorful townhouses and boats along Nyhavn canal" loading="lazy" width="1600" height="1066"></button><figcaption>Nyhavn &middot; Copenhagen</figcaption></figure>
+      <figure><button type="button"><img src="photos/la-dinner.jpg" alt="Candlelit table in a dark wood-beamed restaurant with a bar" loading="lazy" width="1600" height="1200"></button><figcaption>First Michelin-starred dinner &middot; Los Angeles</figcaption></figure>
+      <figure><button type="button"><img src="photos/cape-point.jpg" alt="Rocky cliff dropping into deep blue ocean" loading="lazy" width="1600" height="1067"></button><figcaption>Cape Point &middot; South Africa</figcaption></figure>
+      <figure><button type="button"><img src="photos/tallinn-tanker.jpg" alt="Blue bicycles outside a terrace restaurant with a chalkboard reading Estonian traditional food" loading="lazy" width="1600" height="1066"></button><figcaption>Old Town &middot; Tallinn</figcaption></figure>
+      <figure><button type="button"><img src="photos/bunny.jpg" alt="Giant white bunny sculpture in a museum hall" loading="lazy" width="1600" height="1066"></button><figcaption>My first chocolate museum &middot; Zürich</figcaption></figure>
+      <figure><button type="button"><img src="photos/fjord.jpg" alt="Green mountains over a still turquoise fjord" loading="lazy" width="1600" height="1067"></button><figcaption>Fjords &middot; Norway</figcaption></figure>
+      <figure><button type="button"><img src="photos/rort.jpg" alt="Three open-faced rye sandwiches in a paper tray" loading="lazy" width="1600" height="1066"></button><figcaption>My first open-faced sandwich &middot; R&oslash;rt, Copenhagen</figcaption></figure>
+      <figure><button type="button"><img src="photos/hout-bay.jpg" alt="Turquoise bay beneath a mountain peak" loading="lazy" width="1600" height="1067"></button><figcaption>Hout Bay &middot; Cape Town</figcaption></figure>
+      <figure><button type="button"><img src="photos/tallinn-street.jpg" alt="Cobbled street with cafe umbrellas and an Indian flag on a building" loading="lazy" width="1600" height="1066"></button><figcaption>Spotting home far from home &middot; Tallinn</figcaption></figure>
+      <figure><button type="button"><img src="photos/marina.jpg" alt="Sailboats moored in a marina under a towering cloud" loading="lazy" width="1600" height="1066"></button><figcaption>Harbor &middot; Roskilde</figcaption></figure>
+      <figure><button type="button"><img src="photos/geneva.jpg" alt="Jet d'Eau fountain rising over Lake Geneva" loading="lazy" width="1600" height="1067"></button><figcaption>Jet d&rsquo;Eau &middot; Geneva</figcaption></figure>
+      <figure><button type="button"><img src="photos/highlands.jpg" alt="Snow-dusted mountains above a highland lake under dark clouds" loading="lazy" width="1600" height="1067"></button><figcaption>Mountain plateau &middot; Norway</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="off-clock" class="solid">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Off the clock</p>
+      <h2>Things I could talk about for hours.</h2>
+      <p class="intro">Drag the ring, use the arrows, or select an interest to read the story behind it.</p>
+    </div>
+    <div class="orbit" id="orbit">
+      <div class="orbit-stage" id="orbit-stage" tabindex="0" aria-label="Interests carousel. Use the left and right arrow keys to rotate.">
+        <div class="ring" id="ring"></div>
+      </div>
+      <div class="orbit-ctrl">
+        <button type="button" class="btn" id="orb-prev" aria-label="Previous interest">&larr;</button>
+        <div class="orbit-detail" id="orbit-detail" aria-live="polite"></div>
+        <button type="button" class="btn" id="orb-next" aria-label="Next interest">&rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact" class="solid-2">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2 style="margin-top:1rem">Say hello.</h2>
+    <p class="intro">Email is the fastest way to reach me. I&rsquo;m always happy to trade stock ideas, recommend a book, or tell you which Afrobeats album to start with.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:sunskritijain@berkeley.edu">sunskritijain@berkeley.edu</a>
+      <a class="btn" href="https://www.linkedin.com/in/sunskriti-jain/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://substack.com/@sunskritijain" target="_blank" rel="noopener">Substack</a>
+      <a class="btn" href="https://github.com/sunskriti-jain" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="small copy">&copy; 2026 Sunskriti Jain &nbsp;&middot;&nbsp; Berkeley &nbsp;&middot;&nbsp; Dar es Salaam</p>
+  </div>
+</footer>
+</div>
+
+<dialog id="lightbox" aria-label="Enlarged photo">
+  <button class="x" type="button" id="lb-close">Close</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  /* ---------- pitch tabs ---------- */
+  var tabs=[].slice.call(document.querySelectorAll('.pitch-tabs [role=tab]'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(o){var on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on;});
+  });});
+
+  /* ---------- lightbox ---------- */
+  var dlg=document.getElementById('lightbox'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap');
+  if(dlg&&dlg.showModal){
+    document.getElementById('gallery').addEventListener('click',function(e){
+      var f=e.target.closest('figure');if(!f)return;var i=f.querySelector('img');
+      lbImg.src=i.src;lbImg.alt=i.alt;lbCap.textContent=f.querySelector('figcaption').textContent;dlg.showModal();
+    });
+    document.getElementById('lb-close').addEventListener('click',function(){dlg.close()});
+    dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  }
+
+  /* ---------- pitch scorecards (data refreshed by update_prices.py) ---------- */
+  var PRICES=/*PRICES*/{"updated":"2026-09-21","tickers":{"TLN":{"pitch_date":"2026-04-21","pitch_price":347.74,"target":433.61,"series":[["2026-04-21",329.74],["2026-04-22",339.32],["2026-04-23",345.25],["2026-04-24",364.32],["2026-04-27",369.67],["2026-04-28",361.17],["2026-04-29",351.91],["2026-04-30",372.42],["2026-05-01",372.16],["2026-05-04",384.64],["2026-05-05",384.9],["2026-05-06",409.99],["2026-05-07",390.55],["2026-05-08",386.37],["2026-05-11",383.44],["2026-05-12",374.61],["2026-05-13",351.03],["2026-05-14",352.88],["2026-05-15",334.24],["2026-05-18",324.21],["2026-05-19",314.57],["2026-05-20",344.46],["2026-05-21",360.48],["2026-05-22",372.45],["2026-05-26",389.0],["2026-05-27",379.78],["2026-05-28",381.47],["2026-05-29",386.8],["2026-06-01",377.2],["2026-06-02",385.51],["2026-06-03",379.59],["2026-06-04",378.08],["2026-06-05",364.74],["2026-06-08",364.78],["2026-06-09",358.74],["2026-06-10",336.59],["2026-06-11",344.8],["2026-06-12",360.54],["2026-06-15",386.21],["2026-06-16",406.51],["2026-06-17",409.81],["2026-06-18",436.29],["2026-06-22",438.12],["2026-06-23",411.92],["2026-06-24",405.89],["2026-06-25",416.8],["2026-06-26",404.09],["2026-06-29",399.34],["2026-06-30",384.26],["2026-07-01",360.79],["2026-07-02",364.67],["2026-07-06",377.79],["2026-07-07",366.66],["2026-07-08",367.88],["2026-07-09",384.44],["2026-07-10",385.8],["2026-07-13",396.35],["2026-07-14",396.95],["2026-07-15",400.12],["2026-07-16",368.29],["2026-07-17",372.37],["2026-07-20",360.32],["2026-07-21",366.14],["2026-07-22",377.41],["2026-07-23",379.27],["2026-07-24",359.9],["2026-07-27",347.07],["2026-07-28",326.05],["2026-07-29",316.19],["2026-07-30",332.54],["2026-07-31",334.1],["2026-08-03",344.49],["2026-08-04",340.0],["2026-08-05",329.84],["2026-08-06",338.31],["2026-08-07",347.71],["2026-08-10",343.19],["2026-08-11",357.88],["2026-08-12",365.07],["2026-08-13",358.4],["2026-08-14",362.74],["2026-08-17",356.92],["2026-08-18",317.66],["2026-08-19",322.35],["2026-08-20",316.99],["2026-08-21",314.46],["2026-08-24",305.54],["2026-08-25",307.67],["2026-08-26",306.29],["2026-08-27",304.58],["2026-08-28",296.11],["2026-08-31",295.76],["2026-09-01",293.73],["2026-09-02",302.03],["2026-09-03",305.52],["2026-09-04",317.0],["2026-09-08",325.77],["2026-09-09",319.67],["2026-09-10",311.54],["2026-09-11",312.74],["2026-09-14",286.52],["2026-09-15",282.15],["2026-09-16",287.6],["2026-09-17",293.31],["2026-09-18",292.3],["2026-09-21",299.97]]},"SNAP":{"pitch_date":"2026-03-16","pitch_price":4.54,"target":6.11,"series":[["2026-03-16",4.68],["2026-03-17",4.65],["2026-03-18",4.62],["2026-03-19",4.56],["2026-03-20",4.48],["2026-03-23",4.51],["2026-03-24",4.36],["2026-03-25",4.49],["2026-03-26",4.01],["2026-03-27",3.93],["2026-03-30",4.02],["2026-03-31",4.6],["2026-04-01",4.9],["2026-04-02",4.63],["2026-04-06",4.71],["2026-04-07",4.8],["2026-04-08",4.73],["2026-04-09",4.95],["2026-04-10",4.82],["2026-04-13",5.15],["2026-04-14",5.6],["2026-04-15",6.04],["2026-04-16",6.02],["2026-04-17",6.03],["2026-04-20",6.0],["2026-04-21",5.64],["2026-04-22",5.84],["2026-04-23",5.57],["2026-04-24",5.65],["2026-04-27",6.06],["2026-04-28",5.95],["2026-04-29",5.98],["2026-04-30",6.07],["2026-05-01",6.29],["2026-05-04",6.17],["2026-05-05",6.11],["2026-05-06",6.11],["2026-05-07",5.98],["2026-05-08",6.08],["2026-05-11",5.75],["2026-05-12",5.55],["2026-05-13",5.61],["2026-05-14",5.36],["2026-05-15",5.53],["2026-05-18",5.67],["2026-05-19",5.55],["2026-05-20",5.62],["2026-05-21",5.69],["2026-05-22",5.72],["2026-05-26",5.75],["2026-05-27",5.88],["2026-05-28",5.91],["2026-05-29",5.71],["2026-06-01",5.86],["2026-06-02",5.76],["2026-06-03",5.73],["2026-06-04",6.07],["2026-06-05",5.76],["2026-06-08",5.65],["2026-06-09",5.59],["2026-06-10",5.38],["2026-06-11",5.33],["2026-06-12",5.26],["2026-06-15",5.71],["2026-06-16",5.16],["2026-06-17",4.74],["2026-06-18",4.66],["2026-06-22",4.63],["2026-06-23",4.46],["2026-06-24",4.53],["2026-06-25",4.34],["2026-06-26",4.41],["2026-06-29",4.42],["2026-06-30",4.44],["2026-07-01",4.75],["2026-07-02",4.84],["2026-07-06",4.75],["2026-07-07",4.65],["2026-07-08",4.63],["2026-07-09",4.7],["2026-07-10",4.68],["2026-07-13",4.66],["2026-07-14",4.68],["2026-07-15",4.76],["2026-07-16",4.69],["2026-07-17",4.53],["2026-07-20",4.56],["2026-07-21",4.56],["2026-07-22",4.47],["2026-07-23",4.41],["2026-07-24",4.35],["2026-07-27",4.52],["2026-07-28",4.77],["2026-07-29",4.73],["2026-07-30",4.69],["2026-07-31",4.69],["2026-08-03",5.04],["2026-08-04",5.79],["2026-08-05",5.33],["2026-08-06",5.22],["2026-08-07",5.33],["2026-08-10",5.35],["2026-08-11",5.51],["2026-08-12",5.2],["2026-08-13",5.3],["2026-08-14",5.41],["2026-08-17",5.18],["2026-08-18",5.11],["2026-08-19",5.24],["2026-08-20",5.21],["2026-08-21",5.24],["2026-08-24",5.53],["2026-08-25",5.92],["2026-08-26",5.42],["2026-08-27",5.33],["2026-08-28",5.43],["2026-08-31",5.55],["2026-09-01",5.35],["2026-09-02",5.59],["2026-09-03",5.7],["2026-09-04",5.47],["2026-09-08",5.43],["2026-09-09",5.31],["2026-09-10",5.52],["2026-09-11",5.68],["2026-09-14",5.84],["2026-09-15",5.83],["2026-09-16",5.72],["2026-09-17",5.65],["2026-09-18",5.53],["2026-09-21",5.7]]}}}/*END_PRICES*/;
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    function money(v){return '$'+v.toFixed(2)}
+    function pct(v){return (v>=0?'+':'−')+Math.abs(v*100).toFixed(1)+'%'}
+    function fdate(d){var p=d.split('-');return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1]+' '+(+p[2])+', '+p[0]}
+    [].forEach.call(document.querySelectorAll('.track'),function(el){
+      var t=PRICES.tickers&&PRICES.tickers[el.getAttribute('data-ticker')];
+      if(!t||!t.series||t.series.length<2){el.remove();return;}
+      var last=t.series[t.series.length-1][1],ret=last/t.pitch_price-1,toT=t.target/last-1;
+      el.innerHTML='<div class="track-stats">'+
+        '<div><div class="v">'+money(t.pitch_price)+'</div><div class="k">At pitch</div></div>'+
+        '<div><div class="v">'+money(last)+'</div><div class="k">Latest close</div></div>'+
+        '<div><div class="v '+(ret>=0?'up-t':'down-t')+'">'+(ret>=0?'▲ ':'▼ ')+pct(ret)+'</div><div class="k">Since pitch</div></div>'+
+        '<div><div class="v">'+pct(toT)+'</div><div class="k">To my target</div></div>'+
+        '<p class="note small">Daily closes &middot; updated '+fdate(PRICES.updated)+'</p></div>'+
+        '<div class="track-chart"><div class="head-row"><span class="label">Scorecard &middot; since the pitch</span><span class="small">'+fdate(t.pitch_date)+' &rarr; today</span></div><svg role="img" aria-label="Share price since the pitch"></svg><div class="tip"></div></div>';
+      var svg=el.querySelector('svg'),tip=el.querySelector('.tip'),box=el.querySelector('.track-chart');
+      function draw(){
+        var W=svg.clientWidth||600,H=190,pl=4,pr=70,pt=12,pb=22;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
+        var vals=t.series.map(function(r){return r[1]}).concat([t.pitch_price,t.target]),lo=Math.min.apply(0,vals),hi=Math.max.apply(0,vals),pad=(hi-lo)*.08;lo-=pad;hi+=pad;
+        var n=t.series.length,X=function(i){return pl+(W-pl-pr)*i/(n-1)},Y=function(v){return pt+(H-pt-pb)*(1-(v-lo)/(hi-lo))};
+        function add(tag,attrs,txt){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e;}
+        add('line',{class:'ref tg',x1:pl,x2:W-pr,y1:Y(t.target),y2:Y(t.target)});
+        add('text',{class:'reflab',x:W-pr+8,y:Y(t.target)+3.5},'Target');
+        add('line',{class:'ref',x1:pl,x2:W-pr,y1:Y(t.pitch_price),y2:Y(t.pitch_price)});
+        add('text',{class:'reflab',x:W-pr+8,y:Y(t.pitch_price)+3.5},'At pitch');
+        var d=t.series.map(function(r,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(r[1]).toFixed(1)}).join(' ');
+        var gid='g'+el.getAttribute('data-ticker');
+        var defs=add('defs',{});defs.innerHTML='<linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D4B373" stop-opacity=".22"/><stop offset="1" stop-color="#D4B373" stop-opacity="0"/></linearGradient>';
+        add('path',{d:d+' L'+X(n-1).toFixed(1)+' '+(H-pb)+' L'+X(0)+' '+(H-pb)+' Z',fill:'url(#'+gid+')'});
+        add('path',{class:'line',d:d});
+        add('circle',{class:'end',cx:X(n-1),cy:Y(last),r:4.5});
+        add('text',{class:'axis-lab',x:pl,y:H-4},fdate(t.series[0][0]));
+        add('text',{class:'axis-lab',x:W-pr,y:H-4,'text-anchor':'end'},fdate(t.series[n-1][0]));
+        var cross=add('line',{class:'cross',y1:pt,y2:H-pb,x1:-10,x2:-10}),dot=add('circle',{class:'end',r:4,cx:-10,cy:-10});
+        var hit=add('rect',{x:0,y:0,width:W-pr,height:H,fill:'transparent'});
+        function move(e){var r=svg.getBoundingClientRect(),x=(e.clientX-r.left)*(W/r.width),i=Math.max(0,Math.min(n-1,Math.round((x-pl)/(W-pl-pr)*(n-1)))),row=t.series[i];
+          cross.setAttribute('x1',X(i));cross.setAttribute('x2',X(i));dot.setAttribute('cx',X(i));dot.setAttribute('cy',Y(row[1]));
+          tip.innerHTML='<span>'+fdate(row[0])+'</span>'+money(row[1])+' &middot; '+pct(row[1]/t.pitch_price-1);
+          tip.style.left=(svg.offsetLeft+X(i)*r.width/W)+'px';tip.style.top=(svg.offsetTop+Y(row[1])*r.height/H)+'px';tip.style.opacity=1;}
+        hit.addEventListener('pointermove',move);hit.addEventListener('pointerdown',move);
+        hit.addEventListener('pointerleave',function(){tip.style.opacity=0;cross.setAttribute('x1',-10);cross.setAttribute('x2',-10);dot.setAttribute('cx',-10);});
+      }
+      draw();addEventListener('resize',draw);
+      // redraw when a hidden tab panel becomes visible
+      new MutationObserver(draw).observe(el.closest('.pitch'),{attributes:true,attributeFilter:['hidden']});
+    });
+  })();
+
+  /* ---------- lifecycle curve ---------- */
+  (function(){
+    var fill=document.getElementById('life-fill');if(!fill)return;
+    var nodes=[].slice.call(document.querySelectorAll('#life .node')),panes=[].slice.call(document.querySelectorAll('#life .life-pane'));
+    var L=fill.getTotalLength(),XS=[200,500,820],F=XS.map(function(x){var lo=0,hi=L;for(var k=0;k<30;k++){var m=(lo+hi)/2;if(fill.getPointAtLength(m).x<x)lo=m;else hi=m;}return lo;});
+    fill.style.strokeDasharray=L+' '+L;
+    function sel(i){nodes.forEach(function(n,j){n.setAttribute('aria-pressed',j===i)});panes.forEach(function(p,j){p.hidden=j!==i});fill.style.strokeDashoffset=(L-F[i]);}
+    nodes.forEach(function(n,i){n.addEventListener('click',function(){sel(i)})});
+    sel(0);
+  })();
+
+  /* ---------- interests orbit ---------- */
+  (function(){
+    var I={
+      scuba:'<rect x="6" y="13" width="28" height="14" rx="6"/><path d="M20 17v6M34 21h2V8"/>',
+      glove:'<path d="M12 29V16a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6v6a4 4 0 0 1-4 4H16"/><path d="M12 29h14v5H12z"/><path d="M18 18h8"/>',
+      guitar:'<circle cx="15" cy="27" r="7"/><circle cx="21" cy="21" r="5"/><path d="M24 18 34 8M31 5l4 4"/><circle cx="15" cy="27" r="1.5"/>',
+      spade:'<path d="M20 6C14 14 8 17 8 23a6 6 0 0 0 10 4.5L16 34h8l-2-6.5A6 6 0 0 0 32 23c0-6-6-9-12-17z"/>',
+      note:'<path d="M15 29V9l16-3v20"/><circle cx="11" cy="29" r="4"/><circle cx="27" cy="26" r="4"/>',
+      film:'<rect x="6" y="10" width="28" height="20" rx="2"/><path d="M6 15h28M6 25h28M12 10v5M20 10v5M28 10v5M12 25v5M20 25v5M28 25v5"/>',
+      bottle:'<rect x="11" y="15" width="18" height="19" rx="3"/><path d="M16 15v-4h8v4M18 11V7h4v4M15 22h10"/>',
+      speech:'<path d="M7 10h20v13H15l-6 5v-5H7z"/><path d="M27 16h6v12h-2v4l-5-4h-7v-5"/>',
+      people:'<circle cx="20" cy="14" r="4"/><circle cx="10" cy="18" r="3"/><circle cx="30" cy="18" r="3"/><path d="M12 32c0-5 3.5-8 8-8s8 3 8 8M4 31c0-4 2.5-6 6-6M36 31c0-4-2.5-6-6-6"/>'
+    };
+    var ITEMS=[
+      {i:'scuba',t:'Scuba diving',k:'PADI certified',h:'Plan the dive, dive the plan.',d:'<p>Divers have a rule: plan your dive, dive your plan. You agree on depth, time, and your turnaround point before you get in the water, because underwater is the wrong place to improvise.</p><p>It&rsquo;s the closest thing I have to a risk-management ritual, and it&rsquo;s how I try to think about exit criteria before I buy anything.</p>'},
+      {i:'glove',t:'Kickboxing',k:'190 BPM',h:'Speed comes from repetition.',d:'<p>190 BPM speed-punching. It&rsquo;s the one hour of my day where I can&rsquo;t think about a model, because the second you drift, you get hit.</p><p>What surprised me is that speed doesn&rsquo;t come from intensity. It comes from doing the same combination so many times that it stops needing thought. Modeling works the same way.</p>'},
+      {i:'guitar',t:'Guitar',k:'ABRSM Distinction',h:'The unglamorous part of getting good.',d:'<p>I earned an ABRSM Distinction in guitar. Graded exams taught me what getting good actually looks like: practicing the hardest four bars slowly, a hundred times, until they&rsquo;re automatic.</p>'},
+      {i:'spade',t:'Poker',k:'Club: Poker @ Berkeley',h:'What poker taught me about investing.',d:'<p>I play with Poker @ Berkeley, and the longer I play, the more it looks like investing.</p><ul><li><b>Judge the decision, not the outcome.</b> You can play a hand perfectly and still lose on the river. A good pitch can lose money for a quarter too. What matters is whether the expected value was positive given what you knew. (My Talen scorecard above is a live test of this.)</li><li><b>Size to your edge.</b> Going all-in on a marginal hand is how you go broke. Position size should scale with conviction and with how wrong you could be.</li><li><b>Folding is a skill.</b> The hardest move is letting go of chips you&rsquo;ve already put in. When a thesis breaks, the sunk cost doesn&rsquo;t matter.</li><li><b>Every bet is information.</b> The table tells you what everyone else believes, just like a price does. Your edge only exists where you disagree with the table and have a reason to.</li></ul>'},
+      {i:'note',t:'Afrobeats',k:'Rema &middot; Diamond Platnumz',h:'A little piece of home.',d:'<p>Rema and Diamond Platnumz are on repeat. Diamond is Tanzanian, so his music is a little piece of home wherever I am.</p><p>It&rsquo;s also one of the best export stories in culture right now: a sound built in Africa now fills stadiums in London and New York.</p>'},
+      {i:'film',t:'Video editing',k:'Behind the timeline',h:'Deciding what to leave out.',d:'<p>I edit my own videos, mostly from travel. Editing is storytelling under constraints: you have hours of footage and about ninety seconds of someone&rsquo;s attention. Most of the work is deciding what to cut, and a good pitch deck works the same way.</p>'},
+      {i:'bottle',t:'Fragrances',k:'53 bottles and counting',h:'53 bottles and counting.',d:'<p>My collection is at 53 and growing. On rotation right now: <b>Creed Wind Flowers</b> and <b>Carolina Herrera Dubai</b>.</p><p>Fragrance is also my favorite consumer case study. A bottle that costs a few dollars to fill can sell for hundreds, purely on brand, scarcity, and storytelling. That&rsquo;s pricing power you can literally smell.</p>'},
+      {i:'speech',t:'Languages',k:'Four and counting',h:'Four languages, three homes.',d:'<p>English, Hindi (native), Swahili, and Spanish. Swahili came from growing up in Dar es Salaam, Hindi from home, and Spanish is the one I added on my own. Switching between them all day is good training for listening carefully.</p>'},
+      {i:'people',t:'Communities',k:'BWIB &middot; HBSA &middot; BEH',h:'Where I find builders.',d:'<p>Berkeley Women in Business, HBSA, and the Berkeley Entrepreneurship Hub. These are where I meet people building things, and where I try to bring more people in, the same way we did with Elevate and the Free Ventures mixers.</p>'}
+    ];
+    var ring=document.getElementById('ring'),stage=document.getElementById('orbit-stage'),detail=document.getElementById('orbit-detail');
+    if(!ring)return;
+    var n=ITEMS.length,step=360/n,R=300,angle=0,goal=0,cur=0,auto=!matchMedia('(prefers-reduced-motion: reduce)').matches,timer=null,inView=false;
+    var tiles=ITEMS.map(function(it,i){
+      var b=document.createElement('button');b.type='button';b.className='tile';b.setAttribute('aria-label',it.t);
+      b.innerHTML='<svg viewBox="0 0 40 40" aria-hidden="true">'+I[it.i]+'</svg><span><span class="tn">'+it.t+'</span><br><span class="tk">'+it.k+'</span></span>';
+      b.addEventListener('click',function(){if(moved)return;stop();select(i)});
+      ring.appendChild(b);return b;
+    });
+    function layout(){var tw=tiles[0].offsetWidth||168;R=Math.round(tw/2/Math.tan(Math.PI/n)+28);tiles.forEach(function(t,i){t.style.transform='rotateY('+(i*step)+'deg) translateZ('+R+'px)';});}
+    function nearest(i){var g=-i*step;while(g-angle>180)g-=360;while(g-angle<-180)g+=360;return g;}
+    function select(i){cur=((i%n)+n)%n;goal=nearest(cur);var it=ITEMS[cur];
+      tiles.forEach(function(t,j){t.setAttribute('aria-pressed',j===cur)});
+      detail.innerHTML='<div class="top"><p class="label">'+it.t+' &middot; '+it.k+'</p><span class="small num">'+(cur+1)+' / '+n+'</span></div><h3>'+it.h+'</h3>'+it.d;}
+    function paint(){ring.style.transform='translateZ('+(-R)+'px) rotateY('+angle+'deg)';
+      tiles.forEach(function(t,i){var c=Math.cos((angle+i*step)*Math.PI/180);t.style.opacity=(.18+.82*Math.max(0,c)).toFixed(3);t.style.pointerEvents=c>.2?'auto':'none';});}
+    function loop(){requestAnimationFrame(loop);if(!dragging){angle+=(goal-angle)*.08;}paint();}
+    function stop(){auto=false;clearInterval(timer);}
+    document.getElementById('orb-prev').addEventListener('click',function(){stop();select(cur-1)});
+    document.getElementById('orb-next').addEventListener('click',function(){stop();select(cur+1)});
+    stage.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){stop();select(cur-1)}if(e.key==='ArrowRight'){stop();select(cur+1)}});
+    var dragging=false,moved=false,sx=0,sa=0;
+    stage.addEventListener('pointerdown',function(e){dragging=true;moved=false;sx=e.clientX;sa=angle;stage.classList.add('drag');});
+    addEventListener('pointermove',function(e){if(!dragging)return;var dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;stop();}angle=sa+dx*.35;});
+    addEventListener('pointerup',function(){if(!dragging)return;dragging=false;stage.classList.remove('drag');if(moved){select(Math.round(-angle/step));setTimeout(function(){moved=false},0);}});
+    var spun=false;
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){if(es[0].isIntersecting&&!spun&&auto){spun=true;angle=goal+360;}},{threshold:.35}).observe(stage);
+    addEventListener('resize',layout);layout();select(3);angle=goal;loop();
+  })();
+
+  /* ---------- 3D globe ---------- */
+  var canvas=document.getElementById('globe'),hud=document.getElementById('hud'),label=document.getElementById('pin-label');
+  if(!window.THREE){canvas.remove();hud.classList.add('off');return;}
+  var renderer;
+  try{renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});}catch(e){canvas.remove();hud.classList.add('off');return;}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+  var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,100);camera.position.set(0,0,5.2);
+  var GOLD=0xD4B373,GOLD2=0xE9D3A1;
+  var world=new THREE.Group(),globe=new THREE.Group();world.add(globe);scene.add(world);
+  scene.fog=new THREE.Fog(0x07090F,3.6,12);
+
+  // hero: a slow orrery of light — tilted rings with points travelling on them
+  var hero3d=new THREE.Group();scene.add(hero3d);
+  var RINGS=[{a:1.35,b:1.05,rx:1.15,ry:.35,rz:.2,o:.5,sp:.30},
+             {a:1.85,b:1.55,rx:-.95,ry:.75,rz:-.3,o:.38,sp:-.22},
+             {a:2.45,b:1.95,rx:1.35,ry:-.55,rz:.45,o:.28,sp:.16},
+             {a:3.05,b:2.55,rx:-1.2,ry:.25,rz:-.6,o:.18,sp:-.11}];
+  var orbs=[];
+  RINGS.forEach(function(R,i){
+    var pts=[],N=180;
+    for(var k=0;k<=N;k++){var th=k/N*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(th)*R.a,Math.sin(th)*R.b,0));}
+    var g=new THREE.Group();g.rotation.set(R.rx,R.ry,R.rz);
+    g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:GOLD,transparent:true,opacity:R.o,fog:true})));
+    var orb=new THREE.Mesh(new THREE.SphereGeometry(.035,14,10),new THREE.MeshBasicMaterial({color:0xFFF3DC}));
+    var halo=new THREE.Mesh(new THREE.SphereGeometry(.11,14,10),new THREE.MeshBasicMaterial({color:GOLD2,transparent:true,opacity:.18}));
+    g.add(orb);g.add(halo);hero3d.add(g);
+    orbs.push({orb:orb,halo:halo,R:R,ph:i*1.7});
+  });
+  // core
+  var core=new THREE.Mesh(new THREE.SphereGeometry(.12,24,18),new THREE.MeshBasicMaterial({color:GOLD2,transparent:true,opacity:.9}));
+  hero3d.add(core);
+  hero3d.add(new THREE.Mesh(new THREE.SphereGeometry(.42,24,18),new THREE.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.07})));
+  // dust
+  var dust=[],DN=420;
+  for(var i=0;i<DN;i++){var rr=2+Math.random()*5,th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
+    dust.push(rr*Math.sin(ph)*Math.cos(th),rr*Math.sin(ph)*Math.sin(th)*.6,rr*Math.cos(ph)*.5-1);}
+  var dGeo=new THREE.BufferGeometry();dGeo.setAttribute('position',new THREE.Float32BufferAttribute(dust,3));
+  hero3d.add(new THREE.Points(dGeo,new THREE.PointsMaterial({color:GOLD,size:.026,transparent:true,opacity:.55,fog:true})));
+  function heroTick(t){
+    hero3d.rotation.y=t*.05+spin*.4;hero3d.rotation.x=-.12+Math.sin(t*.13)*.07;
+    orbs.forEach(function(o){var th=t*o.R.sp+o.ph;var x=Math.cos(th)*o.R.a,y=Math.sin(th)*o.R.b;
+      o.orb.position.set(x,y,0);o.halo.position.set(x,y,0);});
+    core.scale.setScalar(1+Math.sin(t*1.1)*.06);
+  }
+  function v3(lat,lon,r){var p=(90-lat)*Math.PI/180,t=(lon+180)*Math.PI/180;return new THREE.Vector3(-r*Math.sin(p)*Math.cos(t),r*Math.cos(p),r*Math.sin(p)*Math.sin(t));}
+
+  // occluder so the back of the globe reads as solid
+  globe.add(new THREE.Mesh(new THREE.SphereGeometry(.985,64,48),new THREE.MeshBasicMaterial({color:0x07090F,transparent:true,opacity:.92})));
+
+  // land dots (Natural Earth 110m on a 2° grid; x=(lon+168)/2, y=(72-lat)/2, run-length encoded per row)
+  var ROWS=[[0,22,2,25,5,31,1,34,2,39,8,57,16,110,2,119,2,123,26,154,5],[1,3,10,19,2,26,8,35,4,42,9,57,16,95,5,118,46],[2,2,25,30,3,35,1,37,3,41,3,46,1,48,4,58,10,92,13,107,1,110,11,122,52,175,1],[3,1,40,47,3,51,2,58,8,73,1,75,2,91,11,105,69,175,5],[4,4,36,41,3,48,4,59,5,73,3,89,6,96,78],[5,2,36,44,4,60,3,87,6,95,71,167,5],[6,1,7,9,1,13,24,46,4,87,7,96,1,99,63,165,2],[7,6,1,17,21,46,7,82,1,90,3,97,58,163,3],[8,4,1,18,23,46,8,82,1,89,3,95,58,162,4],[9,18,25,45,11,80,1,83,1,89,2,92,61,154,1,162,3],[10,21,23,45,12,80,1,82,3,87,69,163,1],[11,20,31,56,1,85,70,156,1],[12,22,30,55,3,82,72,155,1],[13,23,30,54,1,84,16,101,1,103,6,111,42],[14,22,28,51,1,84,7,92,7,104,4,110,42,155,2],[15,22,28,80,6,90,2,94,4,101,1,105,4,111,39,154,1],[16,22,25,80,5,92,1,94,3,98,11,111,33,145,3,154,1],[17,23,23,80,4,91,2,95,2,98,11,111,33,147,2,154,1],[18,24,23,85,5,103,42,148,1,152,3],[19,25,21,81,9,102,43,150,3],[20,26,18,80,12,94,3,102,43],[21,28,12,43,1,80,29,110,35],[22,27,1,29,7,43,1,78,31,110,35],[23,28,1,30,6,77,25,103,7,113,31],[24,29,1,31,5,77,25,104,9,118,25],[25,32,4,42,1,44,2,76,27,104,10,119,22],[26,32,4,39,2,46,1,76,27,105,8,121,7,131,7,139,1],[27,33,7,51,1,76,28,105,8,121,5,132,6,145,1],[28,36,4,41,1,76,28,106,5,121,4,133,6,144,1],[29,39,4,76,29,106,3,122,3,134,5,145,1],[30,41,2,48,2,76,30,122,2,136,3],[31,42,1,47,6,77,33,123,1,137,1],[32,45,10,78,32,124,1,134,1,146,2],[33,46,10,79,6,87,22,135,1],[34,46,13,89,19,133,1,135,1,141,2],[35,45,14,89,18,134,1,136,1,140,3],[36,44,15,89,17,134,2,139,4,144,1,148,1],[37,44,18,89,16,135,2,140,3,144,1,151,1,153,1],[38,44,21,90,14,136,1,144,2,152,5],[39,44,23,91,13,137,1,154,4,159,1],[40,45,22,91,13,140,2,153,3,157,2],[41,45,22,91,13,144,1,146,1,158,2],[42,46,20,91,14,151,2,155,1],[43,46,19,91,14,108,2,149,3,155,1],[44,47,18,90,15,107,2,147,6,155,2],[45,49,16,90,13,107,2,146,12,173,1],[46,49,15,91,11,107,2,144,15],[47,49,15,92,10,106,3,142,17,167,1],[48,49,12,92,10,106,2,141,19],[49,49,11,92,9,141,20],[50,49,11,92,9,142,19],[51,49,10,93,7,142,19],[52,49,10,94,5,142,7,151,10],[53,49,9,94,2,142,2,152,8],[54,48,8,154,6,171,1],[55,48,8,155,3,172,2],[56,48,5,172,1],[57,47,5,157,2,170,2],[58,48,4,169,2],[59,47,4,168,2],[60,47,5],[61,47,3],[62,47,3],[63,48,3]];
+  var pos=[];
+  ROWS.forEach(function(r){var lat=72-2*r[0];for(var i=1;i<r.length;i+=2)for(var x=r[i];x<r[i]+r[i+1];x++){var lon=-168+2*x;if(lon>180)lon-=360;var p=v3(lat,lon,1);pos.push(p.x,p.y,p.z);}});
+  var dg=new THREE.BufferGeometry();dg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  globe.add(new THREE.Points(dg,new THREE.PointsMaterial({color:GOLD,size:.021,transparent:true,opacity:.9,sizeAttenuation:true})));
+
+  // graticule
+  var gp=[],lat,lon,k;
+  for(lat=-60;lat<=60;lat+=30)for(lon=-180;lon<180;lon+=3){var a=v3(lat,lon,1.002),b=v3(lat,lon+3,1.002);gp.push(a.x,a.y,a.z,b.x,b.y,b.z);}
+  for(lon=-180;lon<180;lon+=30)for(lat=-84;lat<84;lat+=3){var c=v3(lat,lon,1.002),d=v3(lat+3,lon,1.002);gp.push(c.x,c.y,c.z,d.x,d.y,d.z);}
+  var gg=new THREE.BufferGeometry();gg.setAttribute('position',new THREE.Float32BufferAttribute(gp,3));
+  globe.add(new THREE.LineSegments(gg,new THREE.LineBasicMaterial({color:GOLD,transparent:true,opacity:.09})));
+
+  // outer halo ring (faces camera, lives on world not globe)
+  var halo=new THREE.Mesh(new THREE.RingGeometry(1.16,1.165,128),new THREE.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.22,side:THREE.DoubleSide}));
+  world.add(halo);
+  var halo2=new THREE.Mesh(new THREE.RingGeometry(1.32,1.323,128),new THREE.MeshBasicMaterial({color:GOLD,transparent:true,opacity:.08,side:THREE.DoubleSide}));
+  world.add(halo2);
+
+  // places (order worked) + home
+  var PLACES=[
+    {name:'Denver',lat:39.74,lon:-104.99},
+    {name:'Dar es Salaam',lat:-6.79,lon:39.21},
+    {name:'Dubai',lat:25.20,lon:55.27},
+    {name:'San Francisco',lat:37.77,lon:-122.42}
+  ];
+  var HOME=1;
+  PLACES.forEach(function(p){
+    p.v=v3(p.lat,p.lon,1.01);
+    var dot=new THREE.Mesh(new THREE.SphereGeometry(.018,16,12),new THREE.MeshBasicMaterial({color:GOLD2}));dot.position.copy(p.v);globe.add(dot);
+    var ring=new THREE.Mesh(new THREE.RingGeometry(.034,.042,48),new THREE.MeshBasicMaterial({color:GOLD2,transparent:true,opacity:.8,side:THREE.DoubleSide}));
+    ring.position.copy(p.v);ring.lookAt(p.v.clone().multiplyScalar(2));globe.add(ring);p.ring=ring;
+    var x=p.v.x,z=p.v.z;p.rotY=-Math.atan2(x,z);p.rotX=p.lat*Math.PI/180;
+  });
+  // arcs between consecutive places
+  var travelers=[];
+  for(k=0;k<PLACES.length-1;k++){
+    var A=PLACES[k].v.clone().normalize(),B=PLACES[k+1].v.clone().normalize(),pts=[],ang=A.angleTo(B);
+    for(var s=0;s<=64;s++){var t=s/64,q=new THREE.Vector3().copy(A).multiplyScalar(Math.sin((1-t)*ang)/Math.sin(ang)).add(B.clone().multiplyScalar(Math.sin(t*ang)/Math.sin(ang)));q.multiplyScalar(1.01+.28*ang/Math.PI*Math.sin(Math.PI*t)*1.6);pts.push(q);}
+    var ag=new THREE.BufferGeometry().setFromPoints(pts);
+    globe.add(new THREE.Line(ag,new THREE.LineBasicMaterial({color:GOLD2,transparent:true,opacity:.45})));
+    var tr=new THREE.Mesh(new THREE.SphereGeometry(.012,10,8),new THREE.MeshBasicMaterial({color:0xFFFFFF}));globe.add(tr);travelers.push({m:tr,pts:pts,off:k*.33});
+  }
+
+  // state
+  var mode='hero',target=HOME,cur={rx:PLACES[HOME].rotX*.6,ry:PLACES[HOME].rotY,px:0,s:1},spin=0,visible=true,vw=1,vh=1,mobile=false;
+  function resize(){vw=innerWidth;vh=innerHeight;mobile=vw<880;renderer.setSize(vw,vh,false);camera.aspect=vw/vh;camera.updateProjectionMatrix();}
+  resize();addEventListener('resize',resize);
+
+  var steps=[].slice.call(document.querySelectorAll('.exp-step'));
+  var hudCity=document.getElementById('hud-city'),hudCoord=document.getElementById('hud-coord');
+  function fmt(p){return Math.abs(p.lat).toFixed(2).padStart(5,'0')+'° '+(p.lat<0?'S':'N')+' · '+Math.abs(p.lon).toFixed(2)+'° '+(p.lon<0?'W':'E');}
+  function setTarget(i){if(i===target)return;target=i;hudCity.textContent=PLACES[i].name+(i===HOME?' · home':'');hudCoord.textContent=fmt(PLACES[i]);}
+  setTarget(HOME);hudCity.textContent=PLACES[HOME].name+' · home';hudCoord.textContent=fmt(PLACES[HOME]);
+
+  var hero=document.getElementById('top'),exp=document.getElementById('experience');
+  function onScroll(){
+    var hr=hero.getBoundingClientRect(),er=exp.getBoundingClientRect();
+    var inHero=hr.bottom>vh*.25,inExp=er.top<vh*.6&&er.bottom>vh*.35;
+    visible=hr.bottom>0||(er.top<vh&&er.bottom>0);
+    mode=inExp?'exp':(inHero?'hero':'hidden');
+    canvas.style.opacity=(mode==='hidden'&&!(er.top<vh&&er.bottom>0))?0:1;
+    hud.classList.toggle('off',mode!=='exp');
+    if(mode==='hero')setTarget(HOME);
+    if(mode==='exp'){
+      var best=0,bd=1e9;steps.forEach(function(st,i){var r=st.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-vh/2);if(d<bd){bd=d;best=i;}});
+      steps.forEach(function(st,i){st.classList.toggle('active',i===best)});
+      setTarget(+steps[best].getAttribute('data-place'));
+    }
+    spin=reduce?0:(scrollY/vh)*.35;
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  canvas.style.transition='opacity .5s';
+
+  var clock=new THREE.Clock(),tmp=new THREE.Vector3();
+  function lerp(a,b,t){return a+(b-a)*t}
+  function angLerp(a,b,t){var d=((b-a+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;return a+d*t}
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible)return;
+    var dt=Math.min(clock.getDelta(),.05),el=clock.elapsedTime,p=PLACES[target],k=1-Math.pow(.02,dt);
+    var ty=p.rotY,tx=p.rotX,tpx=0,ts=1;
+    var heroMode=mode==='hero';
+    hero3d.visible=heroMode;world.visible=!heroMode;
+    if(heroMode){heroTick(reduce?0:el);hero3d.scale.setScalar(mobile?.72:1);}
+    if(heroMode){ty=p.rotY;tx=p.rotX*.55;ts=mobile?.9:1.18;tpx=0;}
+    else{ts=mobile?.85:1.08;tpx=mobile?0:.95;}
+    cur.ry=angLerp(cur.ry,ty,k);cur.rx=lerp(cur.rx,tx,k);cur.px=lerp(cur.px,tpx,k);cur.s=lerp(cur.s,ts,k);
+    globe.rotation.set(cur.rx,cur.ry,0,'XYZ');
+    world.position.set(cur.px,mobile&&mode==='exp'?.55:0,0);world.scale.setScalar(cur.s);
+    PLACES.forEach(function(q,i){var on=i===target;var sc=on?1+.35*Math.sin(el*3)*(reduce?0:1)+.4:1;q.ring.scale.setScalar(lerp(q.ring.scale.x,sc,k));q.ring.material.opacity=on?.95:.45;});
+    travelers.forEach(function(tr){var t=((el*.18+tr.off)%1),i=Math.floor(t*64);tr.m.position.copy(tr.pts[i]);tr.m.visible=!reduce;});
+    renderer.render(scene,camera);
+    // label next to the focused pin
+    tmp.copy(p.v).applyMatrix4(globe.matrixWorld);var facing=tmp.clone().sub(world.position).normalize().z>.2;
+    tmp.project(camera);
+    if(facing&&mode==='exp'){label.classList.remove('off');label.textContent=p.name;label.style.transform='translate('+((tmp.x+1)/2*vw+14)+'px,'+((1-tmp.y)/2*vh)+'px) translateY(-50%)';}
+    else label.classList.add('off');
+  }
+  frame();
+})();
+</script>
