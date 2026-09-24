@@ -266,8 +266,11 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 .item-soon h3{color:var(--gold-2);font-style:italic}
 
 /* photos */
-.photos{columns:3 17rem;column-gap:10px}
-.photos figure{margin:0 0 10px;break-inside:avoid;position:relative;overflow:hidden;background:var(--surface);border-radius:2px}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:10px}
+.photos figure{margin:0;position:relative;overflow:hidden;background:var(--surface);border-radius:2px;aspect-ratio:4/3}
+.photos figure.tall{aspect-ratio:4/3}
+.photos button{height:100%}
+.photos img{height:100%;object-fit:cover}
 .photos button{all:unset;display:block;cursor:zoom-in;width:100%}
 .photos button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 .photos img{width:100%;height:auto;transition:transform .6s ease,filter .6s}
@@ -757,6 +760,13 @@ footer .copy{margin-top:4rem}
       <figure><button type="button"><img src="photos/marina.jpg" alt="Sailboats moored in a marina under a towering cloud" loading="lazy" width="1600" height="1066"></button><figcaption>Harbor &middot; Roskilde</figcaption></figure>
       <figure><button type="button"><img src="photos/geneva.jpg" alt="Jet d'Eau fountain rising over Lake Geneva" loading="lazy" width="1600" height="1067"></button><figcaption>Jet d&rsquo;Eau &middot; Geneva</figcaption></figure>
       <figure><button type="button"><img src="photos/highlands.jpg" alt="Snow-dusted mountains above a highland lake under dark clouds" loading="lazy" width="1600" height="1067"></button><figcaption>Mountain plateau &middot; Norway</figcaption></figure>
+      <figure><button type="button"><img src="photos/glacier.jpg" alt="Me standing on a glacier below a rocky peak" loading="lazy" width="1600" height="1067"></button><figcaption>On the glacier &middot; the Alps</figcaption></figure>
+      <figure><button type="button"><img src="photos/tallinn-cathedral.jpg" alt="Onion domes of Alexander Nevsky Cathedral" loading="lazy" width="1600" height="1067"></button><figcaption>Alexander Nevsky Cathedral &middot; Tallinn</figcaption></figure>
+      <figure><button type="button"><img src="photos/camps-bay.jpg" alt="Low cloud pouring over mountains above a bay" loading="lazy" width="1600" height="1067"></button><figcaption>Cloud over the mountains &middot; Cape Town</figcaption></figure>
+      <figure><button type="button"><img src="photos/seahorse.jpg" alt="Seahorse gripping coral in bright turquoise water" loading="lazy" width="1600" height="1067"></button><figcaption>Seahorse &middot; Cape Town aquarium</figcaption></figure>
+      <figure><button type="button"><img src="photos/christiansborg.jpg" alt="Spire and facade of Christiansborg Palace" loading="lazy" width="1600" height="1067"></button><figcaption>Christiansborg &middot; Copenhagen</figcaption></figure>
+      <figure><button type="button"><img src="photos/alps-valley.jpg" alt="Pine slopes falling away to a mountain town" loading="lazy" width="1600" height="1067"></button><figcaption>Valley town &middot; the Alps</figcaption></figure>
+      <figure><button type="button"><img src="photos/norway-waterfront.jpg" alt="Harbour buildings along the water under a wide sky" loading="lazy" width="1600" height="1067"></button><figcaption>Waterfront &middot; Norway</figcaption></figure>
     </div>
   </div>
 </section>
