@@ -876,10 +876,9 @@ footer .copy{margin-top:4rem}
       var last=t.series[t.series.length-1][1],ret=last/t.pitch_price-1,toT=t.target/last-1;
       el.innerHTML='<div class="track-stats">'+
         '<div><div class="v">'+money(t.pitch_price)+'</div><div class="k">At pitch</div></div>'+
-        '<div><div class="v">'+money(last)+'</div><div class="k">Latest close</div></div>'+
+        '<div><div class="v">'+money(last)+'</div><div class="k">Latest</div></div>'+
         '<div><div class="v '+(ret>=0?'up-t':'down-t')+'">'+(ret>=0?'▲ ':'▼ ')+pct(ret)+'</div><div class="k">Since pitch</div></div>'+
-        '<div><div class="v">'+pct(toT)+'</div><div class="k">To my target</div></div>'+
-        '<p class="note small">Daily closes &middot; updated '+fdate(PRICES.updated)+'</p></div>'+
+        '<div><div class="v">'+pct(toT)+'</div><div class="k">To target</div></div></div>'+
         '<div class="track-chart"><div class="head-row"><span class="label">Scorecard &middot; since the pitch</span><span class="small">'+fdate(t.pitch_date)+' &rarr; today</span></div><svg role="img" aria-label="Share price since the pitch"></svg><div class="tip"></div></div>';
       var svg=el.querySelector('svg'),tip=el.querySelector('.tip'),box=el.querySelector('.track-chart');
       function draw(){
