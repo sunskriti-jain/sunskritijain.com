@@ -106,13 +106,13 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 .pitch-tabs button:hover{color:var(--ink)}
 .pitch-tabs button[aria-selected="true"]{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
 .pitch{border:1px solid var(--line);background:var(--surface);border-radius:4px}
-.pitch-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:2rem;padding:2rem clamp(1.25rem,3vw,2.5rem)}
+.pitch-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;padding:1.5rem clamp(1.25rem,3vw,2.5rem)}
 .pitch-top h3{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:400;margin-top:.75rem}
 .pitch-top .by{margin-top:.6rem}
 .kpis{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line)}
-.kpi{padding:1rem 1.4rem;min-width:8.5rem;border-left:1px solid var(--line)}
+.kpi{padding:.8rem 1.2rem;min-width:7.5rem;border-left:1px solid var(--line)}
 .kpi:first-child{border-left:0}
-.kpi .v{font:400 1.9rem/1 var(--serif)}
+.kpi .v{font:400 1.6rem/1 var(--serif)}
 .kpi .v.up{color:var(--up)}
 .kpi .k{font:500 .62rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.55rem}
 .pitch-body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
@@ -227,11 +227,11 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 
 /* pitch sub-tabs */
 .pitch-sub{border-top:1px solid var(--line)}
-.sub-tabs{display:flex;flex-wrap:wrap;gap:.4rem;padding:1.1rem clamp(1.25rem,3vw,2.5rem);border-bottom:1px solid var(--line)}
+.sub-tabs{display:flex;flex-wrap:wrap;gap:.4rem;padding:.8rem clamp(1.25rem,3vw,2.5rem);border-bottom:1px solid var(--line)}
 .sub-tabs button{font:600 .68rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.75rem 1rem;border-radius:999px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
 .sub-tabs button:hover{color:var(--ink)}
 .sub-tabs button[aria-selected="true"]{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
-.pitch-panel{padding:1.75rem clamp(1.25rem,3vw,2.5rem);display:grid;gap:.9rem;min-height:14rem;align-content:start}
+.pitch-panel{padding:1.5rem clamp(1.25rem,3vw,2.5rem);display:grid;gap:.85rem;min-height:11rem;align-content:start}
 .pitch-panel ul{margin:0;padding-left:1.1rem;display:grid;gap:.75rem;font-size:1.05rem;line-height:1.5;max-width:60rem}
 .pitch-panel li::marker{color:var(--gold)}
 .pitch-panel p{max-width:52rem;font-size:1.05rem;line-height:1.55}
@@ -239,15 +239,15 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 /* pitch scorecard */
 .track{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);border-top:1px solid var(--line)}
 .track-stats{display:grid;grid-template-columns:1fr 1fr;align-content:start;border-right:1px solid var(--line)}
-.track-stats div{padding:1.1rem 1.25rem;border-bottom:1px solid var(--line)}
+.track-stats div{padding:.8rem 1rem;border-bottom:1px solid var(--line)}
 .track-stats div:nth-child(odd){border-right:1px solid var(--line)}
-.track-stats .v{font:400 1.45rem/1 var(--serif);font-variant-numeric:lining-nums tabular-nums}
-.track-stats .k{font:500 .6rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
-.track-stats .note{grid-column:1/-1;border:0;padding:1rem 1.25rem}
+.track-stats .v{font:400 1.25rem/1 var(--serif);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.track-stats .k{font:500 .58rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.track-stats .note{grid-column:1/-1;border:0;padding:.7rem 1rem;font-size:.72rem}
 .up-t{color:var(--up)}.down-t{color:var(--down)}
-.track-chart{position:relative;padding:1.25rem clamp(1rem,2.5vw,1.75rem) .75rem;min-width:0}
-.track-chart .head-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
-.track-chart svg{display:block;width:100%;height:190px;overflow:visible}
+.track-chart{position:relative;padding:1rem clamp(1rem,2.5vw,1.5rem) .6rem;min-width:0}
+.track-chart .head-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
+.track-chart svg{display:block;width:100%;height:150px;overflow:hidden}
 .track-chart .ref{stroke:var(--line-2);stroke-dasharray:3 5;stroke-width:1}
 .track-chart .ref.tg{stroke:var(--gold);opacity:.55}
 .track-chart .reflab{font:500 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;fill:var(--muted)}
@@ -882,7 +882,7 @@ footer .copy{margin-top:4rem}
         '<div class="track-chart"><div class="head-row"><span class="label">Scorecard &middot; since the pitch</span><span class="small">'+fdate(t.pitch_date)+' &rarr; today</span></div><svg role="img" aria-label="Share price since the pitch"></svg><div class="tip"></div></div>';
       var svg=el.querySelector('svg'),tip=el.querySelector('.tip'),box=el.querySelector('.track-chart');
       function draw(){
-        var W=svg.clientWidth||600,H=190,pl=4,pr=70,pt=12,pb=22;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
+        var W=svg.clientWidth||600,H=150,pl=4,pr=64,pt=10,pb=20;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
         var vals=t.series.map(function(r){return r[1]}).concat([t.pitch_price,t.target]),lo=Math.min.apply(0,vals),hi=Math.max.apply(0,vals),pad=(hi-lo)*.08;lo-=pad;hi+=pad;
         var n=t.series.length,X=function(i){return pl+(W-pl-pr)*i/(n-1)},Y=function(v){return pt+(H-pt-pb)*(1-(v-lo)/(hi-lo))};
         function add(tag,attrs,txt){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e;}
@@ -898,14 +898,14 @@ footer .copy{margin-top:4rem}
         add('circle',{class:'end',cx:X(n-1),cy:Y(last),r:4.5});
         add('text',{class:'axis-lab',x:pl,y:H-4},fdate(t.series[0][0]));
         add('text',{class:'axis-lab',x:W-pr,y:H-4,'text-anchor':'end'},fdate(t.series[n-1][0]));
-        var cross=add('line',{class:'cross',y1:pt,y2:H-pb,x1:-10,x2:-10}),dot=add('circle',{class:'end',r:4,cx:-10,cy:-10});
+        var cross=add('line',{class:'cross',y1:pt,y2:H-pb,x1:0,x2:0,opacity:0}),dot=add('circle',{class:'end',r:4,cx:0,cy:0,opacity:0});
         var hit=add('rect',{x:0,y:0,width:W-pr,height:H,fill:'transparent'});
         function move(e){var r=svg.getBoundingClientRect(),x=(e.clientX-r.left)*(W/r.width),i=Math.max(0,Math.min(n-1,Math.round((x-pl)/(W-pl-pr)*(n-1)))),row=t.series[i];
-          cross.setAttribute('x1',X(i));cross.setAttribute('x2',X(i));dot.setAttribute('cx',X(i));dot.setAttribute('cy',Y(row[1]));
+          cross.setAttribute('x1',X(i));cross.setAttribute('x2',X(i));cross.setAttribute('opacity',1);dot.setAttribute('cx',X(i));dot.setAttribute('cy',Y(row[1]));dot.setAttribute('opacity',1);
           tip.innerHTML='<span>'+fdate(row[0])+'</span>'+money(row[1])+' &middot; '+pct(row[1]/t.pitch_price-1);
           tip.style.left=(svg.offsetLeft+X(i)*r.width/W)+'px';tip.style.top=(svg.offsetTop+Y(row[1])*r.height/H)+'px';tip.style.opacity=1;}
         hit.addEventListener('pointermove',move);hit.addEventListener('pointerdown',move);
-        hit.addEventListener('pointerleave',function(){tip.style.opacity=0;cross.setAttribute('x1',-10);cross.setAttribute('x2',-10);dot.setAttribute('cx',-10);});
+        hit.addEventListener('pointerleave',function(){tip.style.opacity=0;cross.setAttribute('opacity',0);dot.setAttribute('opacity',0);});
       }
       draw();addEventListener('resize',draw);
       // redraw when a hidden tab panel becomes visible
