@@ -238,16 +238,17 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 
 /* pitch scorecard */
 .track{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);border-top:1px solid var(--line)}
-.track-stats{display:grid;grid-template-columns:1fr 1fr;align-content:start;border-right:1px solid var(--line)}
-.track-stats div{padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+.track-stats{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;align-content:stretch;border-right:1px solid var(--line)}
+.track-stats div{padding:.85rem 1rem;display:grid;align-content:center;gap:.4rem}
+.track-stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .track-stats div:nth-child(odd){border-right:1px solid var(--line)}
 .track-stats .v{font:400 1.25rem/1 var(--serif);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
-.track-stats .k{font:500 .58rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
-.track-stats .note{grid-column:1/-1;border:0;padding:.7rem 1rem;font-size:.72rem}
+.track-stats .k{font:500 .58rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
 .up-t{color:var(--up)}.down-t{color:var(--down)}
 .track-chart{position:relative;padding:1rem clamp(1rem,2.5vw,1.5rem) .6rem;min-width:0}
 .track-chart .head-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
-.track-chart svg{display:block;width:100%;height:150px;overflow:hidden}
+.track-chart svg{display:block;width:100%;height:165px;overflow:hidden}
 .track-chart .ref{stroke:var(--line-2);stroke-dasharray:3 5;stroke-width:1}
 .track-chart .ref.tg{stroke:var(--gold);opacity:.55}
 .track-chart .reflab{font:500 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;fill:var(--muted)}
@@ -882,7 +883,7 @@ footer .copy{margin-top:4rem}
         '<div class="track-chart"><div class="head-row"><span class="label">Scorecard &middot; since the pitch</span><span class="small">'+fdate(t.pitch_date)+' &rarr; today</span></div><svg role="img" aria-label="Share price since the pitch"></svg><div class="tip"></div></div>';
       var svg=el.querySelector('svg'),tip=el.querySelector('.tip'),box=el.querySelector('.track-chart');
       function draw(){
-        var W=svg.clientWidth||600,H=150,pl=4,pr=64,pt=10,pb=20;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
+        var W=svg.clientWidth||600,H=165,pl=4,pr=64,pt=10,pb=20;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
         var vals=t.series.map(function(r){return r[1]}).concat([t.pitch_price,t.target]),lo=Math.min.apply(0,vals),hi=Math.max.apply(0,vals),pad=(hi-lo)*.08;lo-=pad;hi+=pad;
         var n=t.series.length,X=function(i){return pl+(W-pl-pr)*i/(n-1)},Y=function(v){return pt+(H-pt-pb)*(1-(v-lo)/(hi-lo))};
         function add(tag,attrs,txt){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e;}
