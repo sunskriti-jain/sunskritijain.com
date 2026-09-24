@@ -14,6 +14,7 @@
   --measure:38rem; --wide:72rem;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem;background:var(--bg)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.1875rem/1.6 var(--serif);-webkit-font-smoothing:antialiased}
@@ -278,6 +279,7 @@ dialog .x{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:16p
 .list-inline li span:last-child{color:var(--muted);text-align:right}
 
 footer{padding-block:6rem 3rem;border-top:1px solid var(--line);text-align:center}
+footer .cta{justify-content:center}
 footer h2{font-size:clamp(2.6rem,7vw,5rem);font-weight:400}
 footer p.intro{max-width:32rem;margin:1.25rem auto 0;color:var(--muted)}
 footer .copy{margin-top:4rem}
@@ -315,9 +317,9 @@ footer .copy{margin-top:4rem}
       <p class="lede">Born in the US, raised between Dar es Salaam and Dubai. I grew up around my family&rsquo;s petroleum and logistics business, and now I work on markets from both sides: <em>equity research at Irving Investors, growth equity at Chakra, and long/short pitches for Berkeley&rsquo;s student hedge fund.</em></p>
       <dl class="hero-metrics">
         <div><dt>GPA</dt><dd class="num">3.97 / 4.00</dd></div>
-        <div><dt>Majors</dt><dd>B.A. Data Science &middot; B.A. Political Economy</dd></div>
+        <div><dt>Majors</dt><dd>B.A. Data Science<br>B.A. Political Economy</dd></div>
         <div><dt>Home</dt><dd>Dar es Salaam &rarr; Dubai &rarr; Berkeley</dd></div>
-        <div><dt>Languages</dt><dd>English &middot; Hindi &middot; Swahili &middot; Spanish</dd></div>
+        <div><dt>Languages</dt><dd>English &middot; Swahili &middot; Hindi &middot; Spanish</dd></div>
       </dl>
       <div class="cta">
         <a class="btn primary" href="#pitches">See my pitches</a>
@@ -651,8 +653,9 @@ footer .copy{margin-top:4rem}
           <h3 style="font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:400">An IB panel we built from cold emails.</h3>
           <p>With a few classmates, I co-hosted the 2025 Elevate Investment Banking Panel, which brought together bankers from eight top firms across the Bay Area. We cold-emailed managing directors and VPs to build the panel, covering Technology, Software, Emerging Growth, and Regional Coverage groups.</p>
           <p>Our panelists were managing directors and VPs from Morgan Stanley, J.P. Morgan, Qatalyst Partners, Evercore, Lazard, Moelis &amp; Company, Barclays, and Bank of America.</p>
-          <p>We designed it for anyone curious about how deals get done, not just students already recruiting. The panel covered the day-to-day across different groups, how firms navigate market cycles, rates, and regulatory shifts, and how to build a career in a high-performance environment. It was open to every major and class year.</p>
-          <div><span class="big-num num">250+</span><p class="small" style="margin-top:.4rem">Berkeley students in Dwinelle 145 for the panel, open Q&amp;A, networking, and resume drop</p></div>
+          <p>We designed it for anyone curious about how deals get done, not just students already recruiting. The panel covered the day-to-day across different groups, how firms navigate market cycles, rates, and regulatory shifts, and how to build a career in a high-performance environment.</p>
+          <p>That openness was the point. Banking recruiting runs on networks, and if you&rsquo;re a woman, a first-generation student, or not already in the right club, those networks are the hardest part to get into. So we opened the room to every major and every class year, put the panelists in front of students who would never have gotten a warm intro, and ran a resume drop so anyone in the room could be seen. The people who most need that access are usually the last ones invited.</p>
+          <div><span class="big-num num">300+</span><p class="small" style="margin-top:.4rem">Berkeley students in Dwinelle 145 for the panel, open Q&amp;A, networking, and resume drop</p></div>
         </div>
       </div>
     </div>
@@ -716,7 +719,7 @@ footer .copy{margin-top:4rem}
     </div>
     <div class="prose">
       <p><b>What I want.</b> A community of people who take investing seriously and will pressure-test my thinking. I&rsquo;ve built most of my finance skills on my own, through pitches, case competitions, and internships, and I&rsquo;m ready for the structure and the honest feedback of people a few steps ahead of me.</p>
-      <p><b>What I bring.</b> I&rsquo;m a giver by default. I helped cold-email our way to eight banks for Elevate, and at Free Ventures I run the weekly mixers, because I like building rooms where people help each other. I also bring a perspective most finance programs don&rsquo;t have: I&rsquo;ve seen businesses operate in East Africa, the Gulf, India, and the US, including what it looks like when the infrastructure doesn&rsquo;t exist yet.</p>
+      <p><b>What I bring.</b> I&rsquo;m a giver by default. I helped cold-email our way to eight banks for Elevate, and we filled the room with 300+ students, and at Free Ventures I run the weekly mixers, because I like building rooms where people help each other. I also bring a perspective most finance programs don&rsquo;t have: I&rsquo;ve seen businesses operate in East Africa, the Gulf, India, and the US, including what it looks like when the infrastructure doesn&rsquo;t exist yet.</p>
       <p><b>And grit.</b> I learned early to keep going when things don&rsquo;t get easier. I&rsquo;ll show up to every session, do the homework properly, and answer in the Slack.</p>
     </div>
   </div>
@@ -897,7 +900,7 @@ footer .copy{margin-top:4rem}
       {i:'note',t:'Afrobeats',k:'Rema &middot; Diamond Platnumz',h:'A little piece of home.',d:'<p>Rema and Diamond Platnumz are on repeat. Diamond is Tanzanian, so his music is a little piece of home wherever I am.</p><p>It&rsquo;s also one of the best export stories in culture right now: a sound built in Africa now fills stadiums in London and New York.</p>'},
       {i:'film',t:'Video editing',k:'Behind the timeline',h:'Deciding what to leave out.',d:'<p>I edit my own videos, mostly from travel. Editing is storytelling under constraints: you have hours of footage and about ninety seconds of someone&rsquo;s attention. Most of the work is deciding what to cut, and a good pitch deck works the same way.</p>'},
       {i:'bottle',t:'Fragrances',k:'53 bottles and counting',h:'53 bottles and counting.',d:'<p>My collection is at 53 and growing. On rotation right now: <b>Creed Wind Flowers</b> and <b>Carolina Herrera Dubai</b>.</p><p>Fragrance is also my favorite consumer case study. A bottle that costs a few dollars to fill can sell for hundreds, purely on brand, scarcity, and storytelling. That&rsquo;s pricing power you can literally smell.</p>'},
-      {i:'speech',t:'Languages',k:'Four and counting',h:'Four languages, three homes.',d:'<p>English, Hindi (native), Swahili, and Spanish. Swahili came from growing up in Dar es Salaam, Hindi from home, and Spanish is the one I added on my own. Switching between them all day is good training for listening carefully.</p>'},
+      {i:'speech',t:'Languages',k:'Four and counting',h:'Four languages, three homes.',d:'<p>English, Swahili, Hindi (native), and Spanish. Swahili came from growing up in Dar es Salaam, Hindi from home, and Spanish is the one I added on my own. Switching between them all day is good training for listening carefully.</p>'},
       {i:'people',t:'Communities',k:'BWIB &middot; HBSA &middot; BEH',h:'Where I find builders.',d:'<p>Berkeley Women in Business, HBSA, and the Berkeley Entrepreneurship Hub. These are where I meet people building things, and where I try to bring more people in, the same way we did with Elevate and the Free Ventures mixers.</p>'}
     ];
     var ring=document.getElementById('ring'),stage=document.getElementById('orbit-stage'),detail=document.getElementById('orbit-detail');
